@@ -1,4 +1,4 @@
-baseURL = 'https://basnetdarpan.com/'
+baseURL = 'https://darpanbasnet.github.io/basnetdarpan/'
 languageCode = 'en-us'
 title= 'Darpan Basnet'
 theme='monochrome'
