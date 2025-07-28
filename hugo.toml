@@ -1,0 +1,32 @@
+baseURL = 'https://basnetdarpan.com/'
+languageCode = 'en-us'
+title= 'Darpan Basnet'
+theme='monochrome'
+
+
+[params]
+navbar_title = "DarpanBasnet"
+enable_toc = true # default: true
+toc_position= "right" # "top" | "right", defaukt: "top"
+enable_collapsible_toc = false # default: false
+enable_collapsible_changelogs = false # default: false
+
+
+[[menu.navbar]]
+identifier = "about"
+name = "about"
+title = "about"
+url = "/about/"
+weight = 100
+
+[[menu.navbar]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = 98
+
+[[menu.navbar]]
+identifier = "blog"
+name = "Blog"
+url = "/blog/"
+weight = 99

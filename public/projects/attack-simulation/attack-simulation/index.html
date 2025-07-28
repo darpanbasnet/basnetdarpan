@@ -1,0 +1,479 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='en-us'><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='http://localhost:1313/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Attack Simulation Lab - Darpan Basnet</title>
+
+    
+
+    
+
+    
+
+    
+        <meta property="og:url" content="http://localhost:1313/projects/attack-simulation/attack-simulation/">
+  <meta property="og:site_name" content="Darpan Basnet">
+  <meta property="og:title" content="Attack Simulation Lab">
+  <meta property="og:description" content="Attack Simulation is a core skill in modern cybersecurity — not just for red teams, but also for defenders. It allows you to emulate real-world threat behavior to test how well your detections, alerts, and response processes work in practice.
+This module focuses on safe, controlled adversary emulation using open tools and tactics mapped to MITRE ATT&amp;CK.
+🎯 Why Simulate Attacks? Test if your detections actually fire in the right conditions Understand adversary behavior and how they bypass controls Discover gaps in logging, visibility, and response Train analysts on real attack scenarios in a safe environment ⚔️ Simulation Techniques Atomic Red Team
+Lightweight, modular ATT&amp;CK technique emulation MITRE CALDERA
+Automated adversary emulation with agent-based infrastructure Manual Red Team Emulation
+Using tools like PowerShell, mimikatz, netcat, pspy, nmap, and more Linux/Bash-based Simulations
+Creating malicious cron jobs, abusing misconfigured SSH, reverse shells, etc. 🧰 Tools You’ll Use Atomic Red Team CALDERA by MITRE Invoke-Atomic Attack Range Custom-built Linux-based CTF-style simulation VMs 🔁 Mapping to Detection Engineering Each attack simulation will be followed by:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-07-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-26T00:00:00+00:00">
+
+    
+
+    
+        
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Attack Simulation Lab">
+  <meta name="twitter:description" content="Attack Simulation is a core skill in modern cybersecurity — not just for red teams, but also for defenders. It allows you to emulate real-world threat behavior to test how well your detections, alerts, and response processes work in practice.
+This module focuses on safe, controlled adversary emulation using open tools and tactics mapped to MITRE ATT&amp;CK.
+🎯 Why Simulate Attacks? Test if your detections actually fire in the right conditions Understand adversary behavior and how they bypass controls Discover gaps in logging, visibility, and response Train analysts on real attack scenarios in a safe environment ⚔️ Simulation Techniques Atomic Red Team
+Lightweight, modular ATT&amp;CK technique emulation MITRE CALDERA
+Automated adversary emulation with agent-based infrastructure Manual Red Team Emulation
+Using tools like PowerShell, mimikatz, netcat, pspy, nmap, and more Linux/Bash-based Simulations
+Creating malicious cron jobs, abusing misconfigured SSH, reverse shells, etc. 🧰 Tools You’ll Use Atomic Red Team CALDERA by MITRE Invoke-Atomic Attack Range Custom-built Linux-based CTF-style simulation VMs 🔁 Mapping to Detection Engineering Each attack simulation will be followed by:">
+
+    <link rel="stylesheet" href="/style.css" integrity="">
+
+
+
+
+
+    
+    <script>
+        if (!('theme' in localStorage)) {
+            localStorage.theme = 'light';
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/theme-switch.js" integrity=""></script>
+
+
+
+    <script defer src="/js/hide-navbar-on-scroll.js" integrity=""></script>
+
+
+
+
+
+    <script defer src="/js/zooming.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body><header>
+    <div id="header_content">
+        <div id="header_left">
+            <div id="sidebar_btn">
+                <input type="checkbox" id="sidebar_btn_input" class="hidden" />
+                <label id="sidebar_btn_label" for="sidebar_btn_input">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+
+</label>
+                <label id="sidebar_canvas_overlay_wrapper" for="sidebar_btn_input">
+                    <div id="sidebar_canvas_overlay"></div>
+                </label>
+                <div id="sidebar">
+                    <ul><li>
+                                <a href="/projects/">Projects</a></li><li>
+                                <a href="/blog/">Blog</a></li><li>
+                                <a href="/about/">about</a></li></ul>
+                </div>
+            </div>
+        
+            <div class="brand">
+                <div>
+                    <a href="/">DarpanBasnet</a>
+                </div>
+            </div><nav id="header_navbar" class="pure-menu header-menu">
+    <ul class="pure-menu-list"><li class="header-menu-item pure-menu-item insection">
+                    
+                        <a href="/projects/" class="pure-menu-link">Projects</a>
+                    
+                </li><li class="header-menu-item pure-menu-item ">
+                    
+                        <a href="/blog/" class="pure-menu-link">Blog</a>
+                    
+                </li><li class="header-menu-item pure-menu-item ">
+                    
+                        <a href="/about/" class="pure-menu-link">about</a>
+                    
+                </li></ul>
+</nav>
+</div>
+
+        <div id="header_right">
+            
+
+            <div id="theme_tool">
+                <button id="dark_mode_btn" class="header-menu-btn outline-button" title='Switch to dark mode' type="button">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+
+</button>
+                <button id="light_mode_btn" class="header-menu-btn outline-button" title='Switch to light mode' type="button">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+</svg>
+
+</button>
+            </div>
+
+            
+        </div>
+    </div>
+</header><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.25rem" height="1.25rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+</div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
+</div>
+<main>
+            <div id="content" class="content-margin">
+                
+    
+    
+        
+<script defer src="/js/toc-tracker.js" integrity=""></script>
+
+<div class="collapsible-menu-wrapper right">
+    <div class="collapsible-menu-type">
+        <span>Table of contents</span>
+    </div>
+    <div class="collapsible-menu">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-why-simulate-attacks">🎯 Why Simulate Attacks?</a></li>
+    <li><a href="#-simulation-techniques">⚔️ Simulation Techniques</a></li>
+    <li><a href="#-tools-youll-use">🧰 Tools You’ll Use</a></li>
+    <li><a href="#-mapping-to-detection-engineering">🔁 Mapping to Detection Engineering</a></li>
+    <li><a href="#-example-scenarios">🧪 Example Scenarios</a></li>
+    <li><a href="#-who-is-this-for">👨‍🏫 Who Is This For?</a></li>
+    <li><a href="#-next-step">🧭 Next Step</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+    
+
+
+
+    <div class="content-margin">
+
+
+
+<article class="line-numbers">
+    
+    
+
+    
+    
+        
+        
+            
+        
+        <section><p>Attack Simulation is a core skill in modern cybersecurity — not just for red teams, but also for defenders. It allows you to <strong>emulate real-world threat behavior</strong> to test how well your detections, alerts, and response processes work in practice.</p>
+<p>This module focuses on <strong>safe, controlled adversary emulation</strong> using open tools and tactics mapped to MITRE ATT&amp;CK.</p>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-why-simulate-attacks">
+
+
+<h2 class="header-anchor-wrapper">🎯 Why Simulate Attacks?
+  <a href="#-why-simulate-attacks" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li>Test if your detections actually <strong>fire in the right conditions</strong></li>
+<li>Understand <strong>adversary behavior</strong> and how they bypass controls</li>
+<li>Discover <strong>gaps</strong> in logging, visibility, and response</li>
+<li>Train analysts on real attack scenarios in a safe environment</li>
+</ul>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-simulation-techniques">
+
+
+<h2 class="header-anchor-wrapper">⚔️ Simulation Techniques
+  <a href="#-simulation-techniques" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li><strong>Atomic Red Team</strong><br>
+Lightweight, modular ATT&amp;CK technique emulation</li>
+<li><strong>MITRE CALDERA</strong><br>
+Automated adversary emulation with agent-based infrastructure</li>
+<li><strong>Manual Red Team Emulation</strong><br>
+Using tools like <code>PowerShell</code>, <code>mimikatz</code>, <code>netcat</code>, <code>pspy</code>, <code>nmap</code>, and more</li>
+<li><strong>Linux/Bash-based Simulations</strong><br>
+Creating malicious cron jobs, abusing misconfigured SSH, reverse shells, etc.</li>
+</ul>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-tools-youll-use">
+
+
+<h2 class="header-anchor-wrapper">🧰 Tools You’ll Use
+  <a href="#-tools-youll-use" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li><a href="https://github.com/redcanaryco/atomic-red-team">Atomic Red Team</a></li>
+<li><a href="https://github.com/mitre/caldera">CALDERA by MITRE</a></li>
+<li><a href="https://github.com/redcanaryco/invoke-atomicredteam">Invoke-Atomic</a></li>
+<li><a href="https://github.com/splunk/attack_range">Attack Range</a></li>
+<li>Custom-built Linux-based CTF-style simulation VMs</li>
+</ul>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-mapping-to-detection-engineering">
+
+
+<h2 class="header-anchor-wrapper">🔁 Mapping to Detection Engineering
+  <a href="#-mapping-to-detection-engineering" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<p>Each attack simulation will be followed by:</p>
+<ul>
+<li>Reviewing log telemetry</li>
+<li>Writing or tuning detection rules</li>
+<li>Measuring detection quality (signal vs noise)</li>
+<li>Automating response where applicable</li>
+</ul>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-example-scenarios">
+
+
+<h2 class="header-anchor-wrapper">🧪 Example Scenarios
+  <a href="#-example-scenarios" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li><strong>Initial Access</strong>: Phishing simulation with a fake malicious document</li>
+<li><strong>Privilege Escalation</strong>: Linux SUID binary abuse or Windows UAC bypass</li>
+<li><strong>Defense Evasion</strong>: PowerShell obfuscation or shellcode injection</li>
+<li><strong>Persistence</strong>: Malicious cronjob or registry run key</li>
+<li><strong>Exfiltration</strong>: File transfer via HTTP or DNS tunneling</li>
+</ul>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-who-is-this-for">
+
+
+<h2 class="header-anchor-wrapper">👨‍🏫 Who Is This For?
+  <a href="#-who-is-this-for" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li>Detection engineers and SOC analysts</li>
+<li>Blue teams looking to validate coverage</li>
+<li>Red teamers building detection-aware simulations</li>
+<li>Anyone wanting hands-on understanding of adversary behavior</li>
+</ul>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-next-step">
+
+
+<h2 class="header-anchor-wrapper">🧭 Next Step
+  <a href="#-next-step" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<p>This module links directly into the <strong>Prompt2Lab</strong> system. You can describe a behavior (e.g. &ldquo;simulate a scheduled task with encoded PowerShell&rdquo;) and the system will <strong>set up the environment and simulate it for you</strong>, ready for detection testing.</p>
+<p>In the next lesson, we’ll walk through your first atomic test and how to analyze it using your SIEM.</p>
+</section>
+    
+</article>
+</div>
+
+
+                
+                    
+                
+
+                
+            </div>
+        </main>
+</body>
+</html>

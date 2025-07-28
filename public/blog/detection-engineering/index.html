@@ -1,0 +1,442 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang='en-us'><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href='http://localhost:1313/favicon.ico' type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Detection Engineering - Darpan Basnet</title>
+
+    
+    <meta name="description" content="An introduction to the fundamentals and practice of Detection Engineering — creating, testing, and automating detections to enhance security operations." />
+    
+
+    
+
+    
+
+    
+        <meta property="og:url" content="http://localhost:1313/blog/detection-engineering/">
+  <meta property="og:site_name" content="Darpan Basnet">
+  <meta property="og:title" content="Getting Started with Detection Engineering">
+  <meta property="og:description" content="An introduction to the fundamentals and practice of Detection Engineering — creating, testing, and automating detections to enhance security operations.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2025-07-27T14:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-27T14:00:00+00:00">
+    <meta property="article:tag" content="Detection Engineering">
+    <meta property="article:tag" content="Cybersecurity">
+    <meta property="article:tag" content="SIEM">
+    <meta property="article:tag" content="SOC">
+    <meta property="article:tag" content="Automation">
+
+    
+
+    
+        
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Getting Started with Detection Engineering">
+  <meta name="twitter:description" content="An introduction to the fundamentals and practice of Detection Engineering — creating, testing, and automating detections to enhance security operations.">
+
+    <link rel="stylesheet" href="/style.css" integrity="">
+
+
+
+
+
+    
+    <script>
+        if (!('theme' in localStorage)) {
+            localStorage.theme = 'light';
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        } else {
+            document.documentElement.setAttribute("data-theme", "light");
+        }
+    </script>
+<script defer src="/js/theme-switch.js" integrity=""></script>
+
+
+
+    <script defer src="/js/hide-navbar-on-scroll.js" integrity=""></script>
+
+
+
+
+
+    <script defer src="/js/zooming.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</head>
+<body><header>
+    <div id="header_content">
+        <div id="header_left">
+            <div id="sidebar_btn">
+                <input type="checkbox" id="sidebar_btn_input" class="hidden" />
+                <label id="sidebar_btn_label" for="sidebar_btn_input">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+</svg>
+
+</label>
+                <label id="sidebar_canvas_overlay_wrapper" for="sidebar_btn_input">
+                    <div id="sidebar_canvas_overlay"></div>
+                </label>
+                <div id="sidebar">
+                    <ul><li>
+                                <a href="/projects/">Projects</a></li><li>
+                                <a href="/blog/">Blog</a></li><li>
+                                <a href="/about/">about</a></li></ul>
+                </div>
+            </div>
+        
+            <div class="brand">
+                <div>
+                    <a href="/">DarpanBasnet</a>
+                </div>
+            </div><nav id="header_navbar" class="pure-menu header-menu">
+    <ul class="pure-menu-list"><li class="header-menu-item pure-menu-item ">
+                    
+                        <a href="/projects/" class="pure-menu-link">Projects</a>
+                    
+                </li><li class="header-menu-item pure-menu-item insection">
+                    
+                        <a href="/blog/" class="pure-menu-link">Blog</a>
+                    
+                </li><li class="header-menu-item pure-menu-item ">
+                    
+                        <a href="/about/" class="pure-menu-link">about</a>
+                    
+                </li></ul>
+</nav>
+</div>
+
+        <div id="header_right">
+            
+
+            <div id="theme_tool">
+                <button id="dark_mode_btn" class="header-menu-btn outline-button" title='Switch to dark mode' type="button">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+</svg>
+
+</button>
+                <button id="light_mode_btn" class="header-menu-btn outline-button" title='Switch to light mode' type="button">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.5rem" height="1.5rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+</svg>
+
+</button>
+            </div>
+
+            
+        </div>
+    </div>
+</header><div id="search_menu_wrapper" class="hidden">
+    <div id="search_menu">
+        <div id="search_menu_toolbar">
+            <div id="search_menu_input_wrapper">
+                <input id="search_menu_input" type="text" placeholder='Search Posts'>
+            </div>
+            <div id="search_menu_close_btn">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1.25rem" height="1.25rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+</svg>
+
+</div>
+        </div>
+        <div id="search_menu_results">
+        </div>
+    </div>
+</div>
+<main>
+            <div id="content" class="content-margin">
+                
+    
+    
+        
+<script defer src="/js/toc-tracker.js" integrity=""></script>
+
+<div class="collapsible-menu-wrapper right">
+    <div class="collapsible-menu-type">
+        <span>Table of contents</span>
+    </div>
+    <div class="collapsible-menu">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-what-youll-learn">🧠 What You&rsquo;ll Learn</a></li>
+    <li><a href="#-tools-used">🛠 Tools Used</a></li>
+    <li><a href="#-course-format">📁 Course Format</a></li>
+    <li><a href="#-who-is-this-for">👩‍💻 Who Is This For?</a></li>
+    <li><a href="#-next-step">🚀 Next Step</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+    
+
+
+
+    <div class="content-margin">
+
+
+
+<article class="line-numbers">
+    
+    
+
+    
+    
+        
+        
+            
+        
+        <section><p>Detection Engineering is a foundational skill for modern security professionals working in Security Operations Centers (SOCs), threat hunting, and automation engineering roles. This course will guide you through the <strong>real-world process of building and validating security detections</strong>, using modern tools and techniques.</p>
+<hr>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-what-youll-learn">
+
+
+<h2 class="header-anchor-wrapper">🧠 What You&rsquo;ll Learn
+  <a href="#-what-youll-learn" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li><strong>What is Detection Engineering?</strong>
+<ul>
+<li>Principles, importance, and role in cyber defense.</li>
+</ul>
+</li>
+<li><strong>Log Source &amp; Telemetry Analysis</strong>
+<ul>
+<li>Understanding what logs matter and why.</li>
+</ul>
+</li>
+<li><strong>Detection Rule Writing</strong>
+<ul>
+<li>Writing Sigma, KQL, and custom rules for tools like Splunk, Sentinel, and Elastic.</li>
+</ul>
+</li>
+<li><strong>Test-Driven Detection</strong>
+<ul>
+<li>Simulate threats to validate detections (Atomic Red Team, Caldera).</li>
+</ul>
+</li>
+<li><strong>False Positive Reduction</strong>
+<ul>
+<li>Strategies for precision and tuning.</li>
+</ul>
+</li>
+<li><strong>Detection-as-Code &amp; Version Control</strong>
+<ul>
+<li>CI/CD workflows for detection pipelines.</li>
+</ul>
+</li>
+<li><strong>SOAR &amp; Automation Basics</strong>
+<ul>
+<li>Automating response with tools like Microsoft Defender XDR and Logic Apps.</li>
+</ul>
+</li>
+</ul>
+<hr>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-tools-used">
+
+
+<h2 class="header-anchor-wrapper">🛠 Tools Used
+  <a href="#-tools-used" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li><strong>Elastic Stack</strong></li>
+<li><strong>Microsoft Sentinel</strong></li>
+<li><strong>Sigma Rule Framework</strong></li>
+<li><strong>Atomic Red Team</strong></li>
+<li><strong>MITRE ATT&amp;CK Navigator</strong></li>
+<li><strong>Microsoft Defender XDR</strong></li>
+<li><strong>Azure Logic Apps / SOAR</strong></li>
+</ul>
+<hr>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-course-format">
+
+
+<h2 class="header-anchor-wrapper">📁 Course Format
+  <a href="#-course-format" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li>Hands-on labs using virtual machines and cloud SIEM platforms</li>
+<li>Detection challenges modeled after real APT behavior</li>
+<li>Optional integration with red team simulation tools</li>
+</ul>
+<hr>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-who-is-this-for">
+
+
+<h2 class="header-anchor-wrapper">👩‍💻 Who Is This For?
+  <a href="#-who-is-this-for" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<ul>
+<li>SOC analysts who want to level up</li>
+<li>Detection engineers and threat hunters</li>
+<li>Students or professionals interested in blue team operations</li>
+<li>Anyone curious about how we detect and defend against cyber attacks</li>
+</ul>
+<hr>
+</section>
+    
+        
+        
+            
+            
+            
+        
+        <section id="-next-step">
+
+
+<h2 class="header-anchor-wrapper">🚀 Next Step
+  <a href="#-next-step" class="header-anchor-link">
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1rem" height="1rem" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+    stroke-linejoin="round">
+    <line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line>
+</svg>
+
+</a>
+</h2>
+
+<p>This course is part of the <strong>Signal2Action</strong> learning series — designed to equip you with the practical skills to <strong>build your own detection pipeline</strong> and automate it using AI and agent-based systems.</p>
+<p>Stay tuned for lab setup instructions and your first detection mission!</p>
+</section>
+    
+</article>
+</div>
+
+
+                
+                    
+                
+
+                
+            </div>
+        </main>
+</body>
+</html>

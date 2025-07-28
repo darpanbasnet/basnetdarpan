@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Darpan Basnet</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content on Darpan Basnet</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Attack Simulation Lab</title>
+      <link>http://localhost:1313/projects/attack-simulation/attack-simulation/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/attack-simulation/attack-simulation/</guid>
+      <description>&lt;p&gt;Attack Simulation is a core skill in modern cybersecurity — not just for red teams, but also for defenders. It allows you to &lt;strong&gt;emulate real-world threat behavior&lt;/strong&gt; to test how well your detections, alerts, and response processes work in practice.&lt;/p&gt;&#xA;&lt;p&gt;This module focuses on &lt;strong&gt;safe, controlled adversary emulation&lt;/strong&gt; using open tools and tactics mapped to MITRE ATT&amp;amp;CK.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-why-simulate-attacks&#34;&gt;🎯 Why Simulate Attacks?&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Test if your detections actually &lt;strong&gt;fire in the right conditions&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Understand &lt;strong&gt;adversary behavior&lt;/strong&gt; and how they bypass controls&lt;/li&gt;&#xA;&lt;li&gt;Discover &lt;strong&gt;gaps&lt;/strong&gt; in logging, visibility, and response&lt;/li&gt;&#xA;&lt;li&gt;Train analysts on real attack scenarios in a safe environment&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-simulation-techniques&#34;&gt;⚔️ Simulation Techniques&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Atomic Red Team&lt;/strong&gt;&lt;br&gt;&#xA;Lightweight, modular ATT&amp;amp;CK technique emulation&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;MITRE CALDERA&lt;/strong&gt;&lt;br&gt;&#xA;Automated adversary emulation with agent-based infrastructure&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Manual Red Team Emulation&lt;/strong&gt;&lt;br&gt;&#xA;Using tools like &lt;code&gt;PowerShell&lt;/code&gt;, &lt;code&gt;mimikatz&lt;/code&gt;, &lt;code&gt;netcat&lt;/code&gt;, &lt;code&gt;pspy&lt;/code&gt;, &lt;code&gt;nmap&lt;/code&gt;, and more&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Linux/Bash-based Simulations&lt;/strong&gt;&lt;br&gt;&#xA;Creating malicious cron jobs, abusing misconfigured SSH, reverse shells, etc.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-tools-youll-use&#34;&gt;🧰 Tools You’ll Use&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/redcanaryco/atomic-red-team&#34;&gt;Atomic Red Team&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/mitre/caldera&#34;&gt;CALDERA by MITRE&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/redcanaryco/invoke-atomicredteam&#34;&gt;Invoke-Atomic&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/splunk/attack_range&#34;&gt;Attack Range&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Custom-built Linux-based CTF-style simulation VMs&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-mapping-to-detection-engineering&#34;&gt;🔁 Mapping to Detection Engineering&lt;/h2&gt;&#xA;&lt;p&gt;Each attack simulation will be followed by:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Detection Engineering Lab</title>
+      <link>http://localhost:1313/projects/detection-engineering/detection-engineering-lab/</link>
+      <pubDate>Sat, 26 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/detection-engineering/detection-engineering-lab/</guid>
+      <description>&lt;h1 id=&#34;detection-engineering-lab&#34;&gt;Detection Engineering Lab&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;This is a lab that i created using Virtual Machines to Practice Detection Engineering&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
