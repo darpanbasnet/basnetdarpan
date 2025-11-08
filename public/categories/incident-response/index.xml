@@ -2,18 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Incident Response on My New Hugo Site</title>
-    <link>http://example.org/categories/incident-response/</link>
+    <link>http://localhost:1313/categories/incident-response/</link>
     <description>Recent content in Incident Response on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Sep 2025 11:00:00 -0600</lastBuildDate>
-    <atom:link href="http://example.org/categories/incident-response/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SOC Investigation 101: Tracing a Suspicious PowerShell Execution</title>
-      <link>http://example.org/posts/investigating-suspicious-powershell/</link>
-      <pubDate>Mon, 15 Sep 2025 11:00:00 -0600</pubDate>
-      <guid>http://example.org/posts/investigating-suspicious-powershell/</guid>
-      <description>This post walks through a practical SOC investigation — analyzing PowerShell alerts, correlating events, and validating malicious activity using Elastic Stack and Defender telemetry.</description>
-    </item>
+    <atom:link href="http://localhost:1313/categories/incident-response/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

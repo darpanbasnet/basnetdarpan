@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Detection Engineering in Elastic Stack"
+title: "Getting Started with Detection Engineering in Elastic Stack - 01"
 date: 2025-09-01T10:00:00-06:00
 draft: false
 description: "A beginner-friendly walkthrough on setting up Elastic Stack for detection engineering — from ingestion to creating your first detection rule."

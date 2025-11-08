@@ -2,24 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://example.org/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Sep 2025 11:00:00 -0600</lastBuildDate>
-    <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Sep 2025 10:00:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SOC Investigation 101: Tracing a Suspicious PowerShell Execution</title>
-      <link>http://example.org/posts/investigating-suspicious-powershell/</link>
-      <pubDate>Mon, 15 Sep 2025 11:00:00 -0600</pubDate>
-      <guid>http://example.org/posts/investigating-suspicious-powershell/</guid>
-      <description>This post walks through a practical SOC investigation — analyzing PowerShell alerts, correlating events, and validating malicious activity using Elastic Stack and Defender telemetry.</description>
-    </item>
-    <item>
-      <title>Getting Started with Detection Engineering in Elastic Stack</title>
-      <link>http://example.org/posts/detection-eng/</link>
+      <title>Getting Started with Detection Engineering in Elastic Stack - 01</title>
+      <link>http://localhost:1313/posts/detection-eng/</link>
       <pubDate>Mon, 01 Sep 2025 10:00:00 -0600</pubDate>
-      <guid>http://example.org/posts/detection-eng/</guid>
+      <guid>http://localhost:1313/posts/detection-eng/</guid>
       <description>Learn how to build a practical detection engineering lab using Elastic Stack. This guide covers setup, log ingestion, rule creation, and visualization — everything you need to begin automating detections.</description>
     </item>
   </channel>
