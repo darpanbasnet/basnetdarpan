@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:44073/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Sep 2025 10:00:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:44073/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Started with Detection Engineering in Elastic Stack - 01</title>
-      <link>http://localhost:1313/posts/detection-eng/</link>
+      <link>http://localhost:44073/posts/detection-eng/</link>
       <pubDate>Mon, 01 Sep 2025 10:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/posts/detection-eng/</guid>
+      <guid>http://localhost:44073/posts/detection-eng/</guid>
       <description>Learn how to build a practical detection engineering lab using Elastic Stack. This guide covers setup, log ingestion, rule creation, and visualization — everything you need to begin automating detections.</description>
     </item>
   </channel>

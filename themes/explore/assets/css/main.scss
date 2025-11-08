@@ -916,6 +916,27 @@ figcaption {
   text-align: center;
 }
 
+
+@media (max-width: 600px) {
+  .hero-section {
+    padding: var(--space-l) var(--space-m);
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    padding: var(--space-s) var(--space-m);
+    font-size: 1rem;
+  }
+}
+
+
 .hero-content {
   max-width: var(--max-width-ch);
   margin: 0 auto;
@@ -989,3 +1010,115 @@ figcaption {
 
 /* Comments */
 .chroma .c, .chroma .c1, .chroma .cm, .chroma .cp, .chroma .cs { color: var(--color-text-offset) !important; font-style: italic; }
+
+
+/* --------------------------------------------------------------
+# 9.0 RESPONSIVE IMPROVEMENTS (Custom)
+#--------------------------------------------------------------*/
+
+/* Make typography scale down smoothly on small screens */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.3rem; }
+  h4, h5, h6 { font-size: 1.1rem; }
+
+  body {
+    padding: 0 var(--space-s);
+  }
+
+  .site-main > .page-content {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  /* Reduce margins and padding for compact view */
+  .site-header,
+  .site-footer {
+    padding: var(--space-m);
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+  }
+
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+}
+
+/* Optimize grid spacing on tablets */
+@media (max-width: 900px) {
+  .layout-grid {
+    gap: var(--space-m);
+  }
+}
+
+/* Prevent horizontal scrolling caused by long words or code */
+body, p, pre, code {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* --------------------------------------------------------------
+# 10.0 FLUID TYPOGRAPHY & MOBILE REFINEMENTS (FINAL)
+#--------------------------------------------------------------*/
+
+html {
+  /* Use fluid scaling between 320px → 1280px */
+  font-size: clamp(14px, calc(0.6rem + 1vw), 18px) !important;
+}
+
+body {
+  line-height: 1.75 !important;
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: clamp(1.6rem, calc(1rem + 2vw), 2.5rem) !important;
+}
+h2 {
+  font-size: clamp(1.4rem, calc(0.8rem + 1.8vw), 2rem) !important;
+}
+h3 {
+  font-size: clamp(1.2rem, calc(0.6rem + 1.5vw), 1.7rem) !important;
+}
+p, li {
+  font-size: clamp(0.9rem, calc(0.5rem + 0.8vw), 1.1rem) !important;
+}
+
+pre, code {
+  overflow-x: auto;
+  font-size: clamp(0.8rem, calc(0.3rem + 0.6vw), 0.95rem) !important;
+  white-space: pre-wrap; /* allow wrapping */
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix padding / layout for mobile screens */
+@media (max-width: 600px) {
+  .site-main > .page-content,
+  .post-content {
+    padding: 0 var(--space-s) !important;
+    font-size: 1rem !important;
+  }
+
+  .site-header,
+  .site-footer {
+    padding: var(--space-s) !important;
+  }
+
+  .breadcrumb {
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.85rem !important;
+  }
+}

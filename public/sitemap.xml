@@ -2,46 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://localhost:44073/</loc>
     <lastmod>2025-11-07T12:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/categories/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/categories/incident-response/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/categories/soc-investigation/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/tags/soc-investigation/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/posts/investigating-suspicious-powershell/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/tags/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/tags/windows/</loc>
-    <lastmod>2025-09-15T11:00:00-06:00</lastmod>
-  </url><url>
-    <loc>http://example.org/categories/detection-engineering/</loc>
+    <loc>http://localhost:44073/posts/</loc>
     <lastmod>2025-09-01T10:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://example.org/tags/detection-engineering/</loc>
+    <loc>http://localhost:44073/categories/</loc>
     <lastmod>2025-09-01T10:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/detection-eng/</loc>
+    <loc>http://localhost:44073/categories/detection-engineering/</loc>
     <lastmod>2025-09-01T10:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://example.org/projects/</loc>
-    <lastmod>2025-08-12T00:00:00+00:00</lastmod>
+    <loc>http://localhost:44073/tags/detection-engineering/</loc>
+    <lastmod>2025-09-01T10:00:00-06:00</lastmod>
   </url><url>
-    <loc>http://example.org/search/</loc>
+    <loc>http://localhost:44073/posts/detection-eng/</loc>
+    <lastmod>2025-09-01T10:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:44073/tags/</loc>
+    <lastmod>2025-09-01T10:00:00-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:44073/projects/</loc>
+  </url><url>
+    <loc>http://localhost:44073/search/</loc>
     <priority>0.1</priority>
   </url>
 </urlset>
