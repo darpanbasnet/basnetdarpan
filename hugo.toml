@@ -1,0 +1,73 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "explore"
+summaryLength = 70 # Default length of auto-generated summaries
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"] # Required for Fuse.js search
+
+[build]
+  writeStats = true # Required for Hugo Pipes
+
+[pagination]
+  pagerSize = 5
+
+# --- Theme Parameters ---
+[params]
+  author = "Darpan Basnet"
+  description = "Here i share my exprience, projects, blogs, thoughts"
+  logo = "android-chrome-192x192.png" # Path to logo in /static. Leave empty for text.
+  github = "https://github.com/darpanbasnet"
+  linkedin = "https://linkedin.com/in/darpanbasnet"
+  favicon = "favicon.ico"
+  mainSections = ["posts"]
+  # --- UI Settings ---
+  [params.ui]
+    stickyHeader = true
+    showSearch = true
+    searchEngine = "fuse" # "fuse" or "pagefind"
+    homeView = "default"  # "default" or "compact"
+
+  # --- Style Settings ---
+  [params.style]
+    primary = "#6C3DBF"
+    accent  = "#5FA8A3"
+    containerMaxWidth = "1280px"
+    maxWidthCh = 75
+
+  # --- Widgets & Sidebar ---
+  [params.sidebar]
+    globalPosition = "right" # "left", "right", "bottom", or "off"
+    widgets = ["recent", "categories", "tags"]
+    recentCount = 5
+
+
+  # --- List Page Settings ---
+  [params.list]
+    showExcerpt = true
+
+  # --- Single Page Settings ---
+  [params.single]
+    showPrevNext = true
+    showRelated = true
+    relatedCount = 4
+    [params.single.toc]
+      enable = true
+      position = "right" # "inline", "left", "right", or "off"
+
+[menu]
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 2
+
+[[menu.main]]
+name = "Projects"
+url = "/project/"
+weight = 3
