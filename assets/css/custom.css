@@ -1,0 +1,6 @@
+/* Hide Table of Contents on small screens */
+@media (max-width: 900px) {
+  .toc {
+    display: none !important;
+  }
+}

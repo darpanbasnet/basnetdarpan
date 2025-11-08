@@ -1,8 +1,8 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://basnetdarpan.com/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Darpan Basnet'
 theme = "explore"
-summaryLength = 70 # Default length of auto-generated summaries
+summaryLength = 50 # Default length of auto-generated summaries
 
 [outputs]
   home = ["HTML", "RSS", "JSON"] # Required for Fuse.js search
