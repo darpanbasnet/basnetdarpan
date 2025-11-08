@@ -10,7 +10,7 @@ description: "Learn more about Darpan Basnet — Security Analyst, Researcher, a
 
 # About Me
 
-Hi, I’m **Darpan Basnet** — a cybersecurity student at **Dakota State University**, currently interning at **Black Hills Information Security (BHIS)** as part of the **Security Operations (SecOps) Triage Team**.  
+Hi, I’m **Darpan Basnet** — a Cyber Operations Junior student at **Dakota State University**, currently interning at **Black Hills Information Security (BHIS)** as part of the **Security Operations (SecOps) Triage Team**.  
 In my role, I investigate and respond to alerts across **Windows, Linux, and cloud environments** such as **Azure** and **AWS**.
 
 Previously, I worked as a **Student Security Analyst** at DSU’s **Cyber Security Operations Center (CSOC)**, where I focused on **log collection, detection engineering, threat intelligence integration, and automation** in SIEM platforms like **Elastic Stack** and **Microsoft Defender XDR**.
