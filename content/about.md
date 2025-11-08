@@ -5,70 +5,20 @@ draft: false
 _build:
   list: never
   render: always
-description: "Learn more about Darpan Basnet — Security Analyst, Researcher, and Developer."
----
-# 👋 Hi, I’m Darpan Basnet
-
-I’m a **Security Analyst** and **Cyber Operations student** at *Dakota State University*, where I focus on the intersection of **detection engineering, automation, and applied cybersecurity research**.  
-I’m passionate about building secure, scalable, and intelligent systems — from SIEM automation to adversarial AI defense.
-
+description: "Learn more about Darpan Basnet — Security Analyst, Researcher, and CTF enthusiast."
 ---
 
-## 💼 Professional Summary
+# About Me
 
-As part of Dakota State University’s Security Operations Center (CSOC), I help ensure **log visibility, alert correlation, and threat detection maturity** across enterprise infrastructure.  
-I also work with **Black Hills Information Security (BHIS)**, focusing on:
-- Microsoft Defender XDR automation and playbooks  
-- Detection engineering with Elastic Stack and Sigma  
-- SOAR logic app development and adaptive alert enrichment  
+Hi, I’m **Darpan Basnet** — a cybersecurity student at **Dakota State University**, currently interning at **Black Hills Information Security (BHIS)** as part of the **Security Operations (SecOps) Triage Team**.  
+In my role, I investigate and respond to alerts across **Windows, Linux, and cloud environments** such as **Azure** and **AWS**.
 
-My work bridges practical SOC operations with research — designing **agentic AI and secure automation frameworks** for incident response and detection validation.
+Previously, I worked as a **Student Security Analyst** at DSU’s **Cyber Security Operations Center (CSOC)**, where I focused on **log collection, detection engineering, threat intelligence integration, and automation** in SIEM platforms like **Elastic Stack** and **Microsoft Defender XDR**.
 
----
+Outside of work, I’m the **leader of the CTF Club** at DSU, where we host weekly meetings to explore cybersecurity topics, solve challenges, and compete in CTF competitions.
 
-## 🧠 Areas of Expertise
+I’m also conducting **undergraduate research** on *hardware timing side-channel attacks on quantum control electronics* — a six-month project studying how microcontroller-based architectures in quantum systems can leak information through timing variations and how to mitigate those risks.
 
-- **Detection Engineering** – Elastic Stack, Sigma, Defender XDR  
-- **Threat Hunting & SOC Automation** – Microsoft Sentinel, Logic Apps, custom playbooks  
-- **Incident Response** – log correlation, triage, and evidence analysis  
-- **Security Research** – adversarial AI, quantum security, and hardware side-channel attacks  
-- **Development** – Python, Bash, Docker, and infrastructure-as-code (Vagrant, Ansible)
+Beyond research and work, I love building **homelabs** using tools like **Docker** to simulate real-world SOC investigations, adversary activity, and detection engineering workflows.
 
----
-
-## 🔬 Research & Projects
-
-I’m currently leading an undergraduate research initiative on **Hardware Timing Side-Channel Attacks on Quantum Control Electronics**, exploring vulnerabilities in NISQ-era quantum architectures and control systems.  
-
-- **Coffee & CTF** – my [YouTube channel](https://www.youtube.com/@coffeeandctf) documenting web exploitation,  binary exploitation and reverse engineering CTF challenges  
-
----
-
-## 🎓 Education
-
-**B.S. in Cyber Operations**  
-*Dakota State University, Madison, SD*  
-Expected Graduation: 2026
-
----
-
-## 🧩 Interests
-
-Beyond cybersecurity, I explore:
-- **Reverse engineering & exploit development**
-- **Quantum computing and physics**
-- **AI model security & adversarial robustness**
-- **Open-source research and technical content creation**
-
----
-
-## 🌐 Connect
-
-- **GitHub:** [github.com/darpanbasnet](https://github.com/darpanbasnet)  
-- **LinkedIn:** [linkedin.com/in/darpanbasnet](https://linkedin.com/in/darpanbasnet)  
-- **YouTube:** [Coffee & CTF](https://www.youtube.com/@coffeeandctf)
-
----
-
-> “Detection engineering is not just about alerts — it’s about understanding systems deeply enough to make them tell the truth.”
-
+I also run a **YouTube channel, [Coffee & CTF](https://www.youtube.com/@coffeeandctf)**, where I share content related to CTFs and cybersecurity learning.
