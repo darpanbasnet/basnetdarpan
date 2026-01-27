@@ -1,7 +1,7 @@
 ---
 title: "Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures"
 date: 2026-01-26T12:00:00-06:00
-draft: false
+draft: true
 description: "Overview and upcoming post about simulating and hunting DLL side-loading delivered via social-engineered LinkedIn messages."
 tags: ["threat-hunting","dll","side-loading"]
 categories: ["threat hunting"]

@@ -1,7 +1,7 @@
 ---
 title: "How I Set Up My Threat Hunting & Detection Engineering Lab (coming soon)"
 date: 2026-01-26T12:30:00-06:00
-draft: false
+draft: true
 description: "Upcoming guide: installing and configuring Elastic Stack for detection, telemetry collection, and threat hunting."
 categories: ["detection engineering", "threat hunting"]
 _tags: ["elastic","elk","siem","detection"]

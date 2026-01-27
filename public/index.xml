@@ -6,21 +6,7 @@
     <description>Recent content on Darpan Basnet</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 26 Jan 2026 12:30:00 -0600</lastBuildDate>
+    <lastBuildDate></lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon)</title>
-      <link>http://localhost:1313/posts/elastic-stack-setup/</link>
-      <pubDate>Mon, 26 Jan 2026 12:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/posts/elastic-stack-setup/</guid>
-      <description>&lt;p&gt;This post will provide a step-by-step guide to setting up Elastic Stack (Elasticsearch, Logstash, Kibana, Beats) for detection and response, including required telemetry sources, mappings, dashboards, and hunting queries — coming soon.&lt;/p&gt;&#xA;&lt;p&gt;Stay tuned for a full walkthrough and best practices.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures</title>
-      <link>http://localhost:1313/posts/threat-hunting-dll-side-loading/</link>
-      <pubDate>Mon, 26 Jan 2026 12:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/posts/threat-hunting-dll-side-loading/</guid>
-      <description>&lt;p&gt;This post will cover a real-world technique where adversaries use LinkedIn messaging to deliver malicious payloads that leverage DLL side-loading. I will describe the simulation approach, required telemetry, hunting queries, and recommended tools in the full article — coming soon.&lt;/p&gt;&#xA;&lt;p&gt;Stay tuned for a detailed walkthrough and detection guidance.&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>
