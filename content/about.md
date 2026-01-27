@@ -7,44 +7,71 @@ _build:
   render: always
 description: "Learn more about Darpan Basnet — Security Analyst, Researcher, and CTF enthusiast."
 ---
+<div class="resume">
 
-# About Me
+<h1> Who Am I ?</h1>
 
-Hi, I’m **Darpan Basnet**, a **Cyber Operations sophomore** at **Dakota State University**, currently interning at **Black Hills Information Security (BHIS)** as part of the **Security Operations (SecOps) Triage Team**.  
-In my role, I investigate and respond to alerts across **Windows**, **Linux**, and **cloud environments** such as **Azure** and **AWS**.
-
----
-
-## 🧭 Experience
-
-Previously, I worked as a **Student Security Analyst** at DSU’s **Cyber Security Operations Center (CSOC)**, where I focused on **log collection, detection engineering, threat intelligence integration,** and **automation** in SIEM platforms like **Elastic Stack** and **Microsoft Defender XDR**.
+I build and analyze security systems focusing on detection engineering, threat hunting, incident investigation, and automation. I turn behavioral understanding of systems and attacker techniques into practical detection and response solutions. I also design CTF challenges and prototype tools to improve detection coverage and analyst workflows.
 
 ---
 
-## 🏫 Activities
+## Professional Experience {.section-title}
 
-Outside of work, I’m the **leader of the CTF Club** at DSU, where we host weekly meetings to explore cybersecurity topics, solve challenges, and compete in national CTF competitions.
+<div class="resume-entry">
+<h4>Cybersecurity Researcher — Dakota State University <span class="resume-meta">(Present)</span></h4>
+<ul class="resume-list">
+  <li>Develop CTF challenges across crypto, reverse engineering, network defense, web exploitation, and forensics with documentation and walkthroughs.</li>
+  <li>Integrate and test challenges in competition platforms to ensure functionality, balance, and player engagement.</li>
+</ul>
+</div>
+
+<div class="resume-entry">
+<h4>Security Analyst Intern — Black Hills Information Security (BHIS) <span class="resume-meta">(Jun '25 - Dec '25)</span></h4>
+<ul class="resume-list">
+  <li>Performed frontline alert triage and investigations across Windows, Linux, and multi-cloud (AWS, Azure, GCP).</li>
+  <li>Investigated endpoint compromise, lateral movement, suspicious PowerShell activity, credential access attempts, persistence mechanisms, and anomalous cloud identity/API behavior using SIEM, SOAR, and EDR.</li>
+  <li>Coordinated documentation and improved response workflows; contributed to playbook standardization and detection-as-code initiatives.</li>
+  <li>Collaborated with detection engineers to design and tune detections across multiple telemetry sources to reduce false positives.</li>
+</ul>
+</div>
+
+<div class="resume-entry">
+<h4>Junior Security Analyst — Dakota State University <span class="resume-meta">(Mar '24 - Sep '25)</span></h4>
+<ul class="resume-list">
+  <li>Enhanced scalable logging and detection capabilities by optimizing Elastic Stack integrations for diverse telemetry.</li>
+  <li>Built automated detection mechanisms leveraging threat intelligence and MITRE ATT&CK TTP modeling in SIEM and XDR.</li>
+  <li>Automated Microsoft Sentinel and Defender XDR playbooks using Azure Logic Apps and integrated Teams messaging for multi-alert summarization.</li>
+  <li>Developed a multi-metric scoring system (CVSS, SSVC, EPSS, CKEV) to prioritize vulnerability management strategies.</li>
+</ul>
+</div>
+
+---
+## Education {.section-title}
+
+<ul class="compact">
+  <li><strong>B.S. in Cyber Operations</strong> - Dakota State University (Jan '24 - Present)</li>
+  <li>Recipient of the Student Research Initiative (SRI) Award for research titled "Hardware Side-Channel Security of Quantum System Controllers: A Timing Attack Perspective." (Six-month undergraduate research project)</li>
+</ul>
+
+---
+## Skills {.section-title}
+
+<ul class="compact">
+  <li>Detection & Response: Elastic Stack, Lima Charlie, Microsoft Defender, Detection-as-Code, proactive threat hunting</li>
+  <li>Automation & Scripting: Python, Bash, PowerShell, Power Automate, Logic Apps, CI/CD</li>
+  <li>Frameworks: MITRE ATT&CK, NIST, CISA</li>
+  <li>Networking & OS: TCP/IP, Linux, Windows, macOS</li>
+  <li>Vulnerability Management: Nessus, CVSS, SSVC, EPSS, CKEV</li>
+  <li>Tools: Nmap, Metasploit, Elastic / Kibana, Limacharlie, Snort, Suricata, Wireshark, Burp Suite, Hashcat, Git</li>
+</ul>
 
 ---
 
-## 🔬 Research
+## Extracurricular {.section-title}
 
-I was awarded a **Student Research Initiative (SRI)** to conduct research for six months with my chosen faculty mentor **Dr. Varghese Vaidyan**, alongside my research partner **Anshu Bista**.  
+<ul class="compact">
+  <li>CTF Club leader; competed in NCAE Cyber Game, NSA Codebreaker, IEEE Cars CTF, Hivestorm</li>
+  <li>Built a homelab for automated SIEM and detection engineering workflows (Elastic Stack, Security Onion)</li>
+</ul>
 
-Our project, titled *Hardware Timing Side-Channel Attacks on Quantum Control Electronics*, focuses on studying vulnerabilities in the classical control components of quantum computers.  
-Classical control architectures are integral to quantum computers, enabling the **initialization**, **manipulation**, and **measurement** of qubits, as well as **error correction**.  
-
-In this project, we will **prototype a quantum computer control architecture** on a **microcontroller and/or FPGA (field-programmable gate array)** platform and investigate how execution time may vary depending on the quantum operations initiated.  
-By systematically studying and characterizing these timing variations, we aim to assess **how sensitive information might be leaked through hardware timing side-channel attacks** and explore potential **mitigation strategies**.
-
----
-
-## ⚙️ Interests
-
-Beyond research and work, I love building **homelabs** using tools like **Docker** to simulate real-world SOC investigations, adversary activity, and detection engineering workflows.
-
----
-
-## 🎥 Coffee & CTF
-
-I also run a **YouTube channel**, [Coffee & CTF](https://www.youtube.com/@coffeeandctf), where I share content related to capture-the-flag challenges and cybersecurity learning.
+</div>

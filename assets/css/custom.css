@@ -4,3 +4,38 @@
     display: none !important;
   }
 }
+
+/* Resume / About page styling */
+.resume-contact {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+.resume-contact a { color: inherit; text-decoration: underline; }
+.resume {
+  max-width: 760px;
+}
+.resume .resume-entry h4 {
+  font-size: 1rem;
+  margin: 0.4rem 0 0.25rem 0;
+  font-weight: 600;
+}
+.resume .resume-meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.35rem;
+}
+.resume .resume-list {
+  font-size: 0.94rem;
+  margin-left: 1rem;
+  line-height: 1.45;
+}
+.resume .compact {
+  font-size: 0.95rem;
+  margin-left: 1rem;
+}
+.resume .section-title {
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+
