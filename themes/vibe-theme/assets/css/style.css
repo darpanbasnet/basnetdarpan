@@ -98,7 +98,7 @@ a:hover {
 
 .main-content {
     flex-grow: 1;
-    padding: clamp(1.5rem, 3vw, 2rem) 0 clamp(3rem, 5vw, 4rem);
+    padding: clamp(1.5rem, 3vw, 2rem) 0 1rem;
 }
 
 .site-header,
@@ -334,7 +334,7 @@ a:hover {
 /* Footer */
 .site-footer {
     position: relative;
-    min-height: 6rem;
+    min-height: 5.5rem;
     padding: 0;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
@@ -345,7 +345,7 @@ a:hover {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 1rem;
+    bottom: 0.25rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1115,11 +1115,11 @@ p { margin-bottom: 1.5rem; }
     }
 
     .site-footer {
-        min-height: 5.5rem;
+        min-height: 5rem;
     }
 
     .footer-inner {
-        bottom: 0.9rem;
+        bottom: 0.2rem;
     }
 }
 
