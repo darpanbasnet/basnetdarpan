@@ -151,17 +151,18 @@ a:hover {
     justify-content: center;
     width: 44px;
     height: 44px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    background: var(--surface-color);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     color: var(--text-main);
     cursor: pointer;
     padding: 0;
     font: inherit;
-    transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
     overflow: hidden;
     -webkit-appearance: none;
     appearance: none;
+    box-shadow: none;
 }
 
 .back-button {
@@ -217,27 +218,27 @@ a:hover {
     justify-content: center;
     width: 44px;
     height: 44px;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    background: var(--surface-color);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     color: var(--text-main);
     cursor: pointer;
     padding: 0;
     font: inherit;
-    transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
     -webkit-appearance: none;
     appearance: none;
+    box-shadow: none;
 }
 
 .theme-toggle:hover {
-    border-color: var(--accent-color);
+    color: var(--accent-color);
     transform: translateY(-1px);
 }
 
 .theme-toggle:active {
     transform: translateY(0);
-    background: var(--surface-hover);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+    opacity: 0.8;
 }
 
 .theme-toggle:focus-visible {
@@ -264,14 +265,13 @@ a:hover {
 }
 
 .nav-toggle:hover {
-    border-color: var(--accent-color);
+    color: var(--accent-color);
     transform: translateY(-1px);
 }
 
 .nav-toggle:active {
     transform: translateY(0);
-    background: var(--surface-hover);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
+    opacity: 0.8;
 }
 
 .nav-toggle:focus-visible {
@@ -757,12 +757,10 @@ p { margin-bottom: 1.5rem; }
         top: 1.1rem;
         right: 1rem;
         z-index: 1002;
-        box-shadow: var(--shadow-sm);
     }
 
     .nav-toggle:active {
-        background: var(--surface-hover);
-        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.18);
+        opacity: 0.8;
     }
 
     .nav-toggle:hover {
@@ -778,12 +776,10 @@ p { margin-bottom: 1.5rem; }
         top: 1.1rem;
         right: 5rem;
         z-index: 30;
-        box-shadow: var(--shadow-sm);
     }
 
     .theme-toggle:active {
-        background: var(--surface-hover);
-        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.18);
+        opacity: 0.8;
     }
 
     .theme-toggle:hover {
