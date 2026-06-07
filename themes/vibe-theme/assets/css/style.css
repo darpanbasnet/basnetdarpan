@@ -98,7 +98,7 @@ a:hover {
 
 .main-content {
     flex-grow: 1;
-    padding: clamp(1.5rem, 3vw, 2rem) 0 1rem;
+    padding: clamp(1.5rem, 3vw, 2rem) 0 0.25rem;
 }
 
 .site-header,
@@ -334,7 +334,7 @@ a:hover {
 /* Footer */
 .site-footer {
     position: relative;
-    min-height: 5.5rem;
+    min-height: 4.25rem;
     padding: 0;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
@@ -1115,7 +1115,7 @@ p { margin-bottom: 1.5rem; }
     }
 
     .site-footer {
-        min-height: 5rem;
+        min-height: 4rem;
     }
 
     .footer-inner {
