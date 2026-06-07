@@ -764,7 +764,7 @@ p { margin-bottom: 1.5rem; }
     .theme-toggle {
         position: fixed;
         top: 1.1rem;
-        right: 4.25rem;
+        right: 5rem;
         z-index: 30;
         box-shadow: var(--shadow-sm);
     }
@@ -806,7 +806,7 @@ p { margin-bottom: 1.5rem; }
         bottom: 0;
         left: 0;
         width: 100vw;
-        padding: clamp(1.5rem, 5vw, 3rem);
+        padding: clamp(5rem, 16vw, 6.5rem) clamp(1.5rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
         background: var(--bg-color);
         border: 0;
         box-shadow: inset 0 -1px 0 var(--border-color);
@@ -1020,7 +1020,7 @@ p { margin-bottom: 1.5rem; }
     }
 
     .theme-toggle {
-        right: 3.45rem;
+        right: 4.15rem;
     }
 
     .nav-toggle {
