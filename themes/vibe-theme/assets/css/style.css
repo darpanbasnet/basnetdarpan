@@ -115,9 +115,9 @@ a:hover {
 
 .site-brand {
     font-family: var(--font-heading);
-    font-size: clamp(0.95rem, 0.8rem + 0.65vw, 1.3rem);
-    font-weight: 700;
-    letter-spacing: -0.04em;
+    font-size: clamp(1.1rem, 0.9rem + 0.95vw, 1.7rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
     line-height: 1.05;
     color: var(--text-main);
     text-decoration: none;
@@ -703,8 +703,10 @@ p { margin-bottom: 1.5rem; }
     }
 
     .site-brand {
-        max-width: min(58vw, 14rem);
-        font-size: clamp(0.88rem, 0.8rem + 0.6vw, 1.05rem);
+        max-width: min(68vw, 20rem);
+        font-size: clamp(1.05rem, 0.95rem + 1.2vw, 1.45rem);
+        font-weight: 800;
+        letter-spacing: -0.07em;
     }
 
     .site-brand--offset {
