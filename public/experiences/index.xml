@@ -1,38 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>Experiences on Darpan Basnet</title>
-		<link>http://localhost:1313/experiences/</link>
-		<description>Recent content in Experiences on Darpan Basnet</description>
-		<generator>Hugo</generator>
-		<language>en-us</language>
-		
-		
-		
-		
-			<lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate>
-		
-			<atom:link href="http://localhost:1313/experiences/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>Cybersecurity Researcher</title>
-				<link>http://localhost:1313/experiences/dsu-researcher/</link>
-				<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/experiences/dsu-researcher/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;Develop CTF challenges across crypto, reverse engineering, network defense, web exploitation, and forensics with documentation and walkthroughs.&lt;/li&gt;&#xA;&lt;li&gt;Integrate and test challenges in competition platforms to ensure functionality, balance, and player engagement.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-			</item>
-			<item>
-				<title>Security Analyst Intern</title>
-				<link>http://localhost:1313/experiences/bhis-intern/</link>
-				<pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/experiences/bhis-intern/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;Performed frontline alert triage and investigations across Windows, Linux, and multi-cloud (AWS, Azure, GCP).&lt;/li&gt;&#xA;&lt;li&gt;Investigated endpoint compromise, lateral movement, suspicious PowerShell activity, credential access attempts, persistence mechanisms, and anomalous cloud identity/API behavior using SIEM, SOAR, and EDR.&lt;/li&gt;&#xA;&lt;li&gt;Coordinated documentation and improved response workflows; contributed to playbook standardization and detection-as-code initiatives.&lt;/li&gt;&#xA;&lt;li&gt;Collaborated with detection engineers to design and tune detections across multiple telemetry sources to reduce false positives.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-			</item>
-			<item>
-				<title>Junior Security Analyst</title>
-				<link>http://localhost:1313/experiences/dsu-junior-analyst/</link>
-				<pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate>
-				<guid>http://localhost:1313/experiences/dsu-junior-analyst/</guid>
-				<description>&lt;ul&gt;&#xA;&lt;li&gt;Enhanced scalable logging and detection capabilities by optimizing Elastic Stack integrations for diverse telemetry.&lt;/li&gt;&#xA;&lt;li&gt;Built automated detection mechanisms leveraging threat intelligence and MITRE ATT&amp;amp;CK TTP modeling in SIEM and XDR.&lt;/li&gt;&#xA;&lt;li&gt;Automated Microsoft Sentinel and Defender XDR playbooks using Azure Logic Apps and integrated Teams messaging for multi-alert summarization.&lt;/li&gt;&#xA;&lt;li&gt;Developed a multi-metric scoring system (CVSS, SSVC, EPSS, CKEV) to prioritize vulnerability management strategies.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-			</item>
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Experiences on Darpan Basnet</title><link>https://basnetdarpan.com/experiences/</link><description>Recent content in Experiences on Darpan Basnet</description><generator>Hugo</generator><language>en-US</language><lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://basnetdarpan.com/experiences/index.xml" rel="self" type="application/rss+xml"/><item><title>Cybersecurity Researcher</title><link>https://basnetdarpan.com/experiences/dsu-researcher/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://basnetdarpan.com/experiences/dsu-researcher/</guid><description>&lt;ul&gt;
+&lt;li&gt;Develop CTF challenges across crypto, reverse engineering, network defense, web exploitation, and forensics with documentation and walkthroughs.&lt;/li&gt;
+&lt;li&gt;Integrate and test challenges in competition platforms to ensure functionality, balance, and player engagement.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Security Analyst Intern</title><link>https://basnetdarpan.com/experiences/bhis-intern/</link><pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate><guid>https://basnetdarpan.com/experiences/bhis-intern/</guid><description>&lt;ul&gt;
+&lt;li&gt;Performed frontline alert triage and investigations across Windows, Linux, and multi-cloud (AWS, Azure, GCP).&lt;/li&gt;
+&lt;li&gt;Investigated endpoint compromise, lateral movement, suspicious PowerShell activity, credential access attempts, persistence mechanisms, and anomalous cloud identity/API behavior using SIEM, SOAR, and EDR.&lt;/li&gt;
+&lt;li&gt;Coordinated documentation and improved response workflows; contributed to playbook standardization and detection-as-code initiatives.&lt;/li&gt;
+&lt;li&gt;Collaborated with detection engineers to design and tune detections across multiple telemetry sources to reduce false positives.&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Junior Security Analyst</title><link>https://basnetdarpan.com/experiences/dsu-junior-analyst/</link><pubDate>Fri, 01 Mar 2024 00:00:00 +0000</pubDate><guid>https://basnetdarpan.com/experiences/dsu-junior-analyst/</guid><description>&lt;ul&gt;
+&lt;li&gt;Enhanced scalable logging and detection capabilities by optimizing Elastic Stack integrations for diverse telemetry.&lt;/li&gt;
+&lt;li&gt;Built automated detection mechanisms leveraging threat intelligence and MITRE ATT&amp;amp;CK TTP modeling in SIEM and XDR.&lt;/li&gt;
+&lt;li&gt;Automated Microsoft Sentinel and Defender XDR playbooks using Azure Logic Apps and integrated Teams messaging for multi-alert summarization.&lt;/li&gt;
+&lt;li&gt;Developed a multi-metric scoring system (CVSS, SSVC, EPSS, CKEV) to prioritize vulnerability management strategies.&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

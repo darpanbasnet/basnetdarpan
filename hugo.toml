@@ -1,5 +1,5 @@
-baseURL = 'http://basnetdarpan.com/'
-languageCode = 'en-us'
+baseURL = 'https://basnetdarpan.com/'
+locale = 'en-US'
 title = 'Darpan Basnet'
 theme = 'vibe-theme'
 summaryLength = 30

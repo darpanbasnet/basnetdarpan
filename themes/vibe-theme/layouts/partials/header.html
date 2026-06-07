@@ -1,12 +1,29 @@
 <header class="site-header">
     <div class="header-inner">
+        {{ $site := .Site }}
+        {{ $current := . }}
         <div class="site-branding">
-            <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+            <a href="{{ $site.BaseURL }}" class="site-title">{{ $site.Title }}</a>
         </div>
-        <nav class="site-nav">
+        {{ with $site.Menus.main }}
+        <button
+            id="nav-toggle"
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="site-nav"
+            aria-expanded="false"
+        >
+            <svg class="nav-icon nav-icon--open" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <svg class="nav-icon nav-icon--close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
             <ul class="menu">
-                {{ $current := . }}
-                {{ range .Site.Menus.main }}
+                {{ range . }}
                 {{ $active := or (eq $current.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $current.RelPermalink .URL)) }}
                 <li class="menu-item">
                     <a href="{{ .URL }}" class="{{ if $active }}active{{ end }}">{{ .Name }}</a>
@@ -14,5 +31,6 @@
                 {{ end }}
             </ul>
         </nav>
+        {{ end }}
     </div>
 </header>
