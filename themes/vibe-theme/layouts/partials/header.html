@@ -3,6 +3,16 @@
         {{ $site := .Site }}
         {{ $current := . }}
         <button
+            id="back-button"
+            class="back-button"
+            type="button"
+            aria-label="Go back"
+        >
+            <svg class="back-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+        <button
             id="theme-toggle"
             class="theme-toggle"
             type="button"

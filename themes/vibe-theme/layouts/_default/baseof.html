@@ -38,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-home-url="{{ "/" | relLangURL }}">
     <div class="site-container">
         {{ partial "header.html" . }}
         
@@ -50,6 +50,7 @@
     </div>
     <script>
         (() => {
+            const backButton = document.getElementById('back-button');
             const themeToggle = document.getElementById('theme-toggle');
             const toggle = document.getElementById('nav-toggle');
             const nav = document.getElementById('site-nav');
@@ -82,6 +83,15 @@
             applyTheme(storedTheme);
 
             if (!toggle || !nav || !backdrop) {
+                if (backButton) {
+                    backButton.addEventListener('click', () => {
+                        if (window.history.length > 1) {
+                            window.history.back();
+                        } else {
+                            window.location.href = document.body.dataset.homeUrl || '/';
+                        }
+                    });
+                }
                 return;
             }
 
@@ -126,6 +136,16 @@
                 themeToggle.addEventListener('click', () => {
                     const nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
                     applyTheme(nextTheme);
+                });
+            }
+
+            if (backButton) {
+                backButton.addEventListener('click', () => {
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = document.body.dataset.homeUrl || '/';
+                    }
                 });
             }
         })();
