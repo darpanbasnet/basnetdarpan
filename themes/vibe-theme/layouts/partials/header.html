@@ -2,6 +2,7 @@
     <div class="header-inner">
         {{ $site := .Site }}
         {{ $current := . }}
+        {{ if not .IsHome }}
         <button
             id="back-button"
             class="back-button"
@@ -12,6 +13,7 @@
                 <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
         </button>
+        {{ end }}
         <button
             id="theme-toggle"
             class="theme-toggle"
