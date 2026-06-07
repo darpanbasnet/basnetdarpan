@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="utility-page utility-page--error">
+    <p class="utility-page__eyebrow">404</p>
+    <h1 class="utility-page__title">Page not found</h1>
+    <p class="utility-page__copy">
+        The page you are looking for does not exist, or it has moved somewhere else.
+    </p>
+
+    <div class="utility-page__actions">
+        <a href="{{ "/" | relLangURL }}" class="read-more">Back home</a>
+        <a href="{{ "/posts/" | relLangURL }}" class="read-more">Browse posts</a>
+    </div>
+</section>
+{{ end }}

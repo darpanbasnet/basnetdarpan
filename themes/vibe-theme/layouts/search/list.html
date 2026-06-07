@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="utility-page utility-page--search">
+    <p class="utility-page__eyebrow">Search</p>
+    <h1 class="utility-page__title">{{ .Title }}</h1>
+    <p class="utility-page__copy">
+        Search is not configured on this build yet. Use the links below to keep exploring the site.
+    </p>
+
+    <div class="utility-page__actions">
+        <a href="{{ "/posts/" | relLangURL }}" class="read-more">Browse posts</a>
+        <a href="{{ "/projects/" | relLangURL }}" class="read-more">Browse projects</a>
+    </div>
+</section>
+{{ end }}
