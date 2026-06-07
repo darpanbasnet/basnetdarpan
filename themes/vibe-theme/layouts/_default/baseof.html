@@ -12,6 +12,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
 
+    <script>
+        (() => {
+            try {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme === 'light' || storedTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', storedTheme);
+                }
+            } catch (error) {
+                // Ignore storage failures and keep the default theme.
+            }
+        })();
+    </script>
+
     {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
@@ -20,10 +33,10 @@
         import hotwiredTurbo from 'https://cdn.jsdelivr.net/npm/@hotwired/turbo@8.0.4/+esm'
     </script>
 
-    <!-- Google Fonts: Space Grotesk (Headings) & Inter (Body) -->
+    <!-- Google Fonts: Space Grotesk (Headings) & IBM Plex Sans (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="site-container">
@@ -37,16 +50,40 @@
     </div>
     <script>
         (() => {
+            const themeToggle = document.getElementById('theme-toggle');
             const toggle = document.getElementById('nav-toggle');
             const nav = document.getElementById('site-nav');
             const backdrop = document.getElementById('nav-backdrop');
+            const root = document.documentElement;
+            const mobileQuery = window.matchMedia('(max-width: 768px)');
+
+            const applyTheme = (theme) => {
+                const nextTheme = theme === 'light' ? 'light' : 'dark';
+                root.setAttribute('data-theme', nextTheme);
+
+                if (themeToggle) {
+                    themeToggle.setAttribute('aria-label', nextTheme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+                    themeToggle.classList.toggle('is-light', nextTheme === 'light');
+                }
+
+                try {
+                    localStorage.setItem('theme', nextTheme);
+                } catch (error) {
+                    // Ignore storage failures.
+                }
+            };
+
+            let storedTheme = 'dark';
+            try {
+                storedTheme = localStorage.getItem('theme') || 'dark';
+            } catch (error) {
+                storedTheme = 'dark';
+            }
+            applyTheme(storedTheme);
 
             if (!toggle || !nav || !backdrop) {
                 return;
             }
-
-            const root = document.documentElement;
-            const mobileQuery = window.matchMedia('(max-width: 768px)');
 
             const syncState = (isOpen) => {
                 const mobile = mobileQuery.matches;
@@ -84,6 +121,13 @@
             mobileQuery.addEventListener('change', () => {
                 syncState(false);
             });
+
+            if (themeToggle) {
+                themeToggle.addEventListener('click', () => {
+                    const nextTheme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+                    applyTheme(nextTheme);
+                });
+            }
         })();
     </script>
 </body>
