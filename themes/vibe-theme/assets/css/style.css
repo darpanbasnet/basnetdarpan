@@ -48,6 +48,11 @@ html.is-menu-open {
     padding: 0;
 }
 
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 @view-transition {
     navigation: auto;
 }
@@ -115,6 +120,8 @@ a:hover {
     font: inherit;
     transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
     overflow: hidden;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .theme-toggle {
@@ -131,11 +138,19 @@ a:hover {
     padding: 0;
     font: inherit;
     transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .theme-toggle:hover {
     border-color: var(--accent-color);
     transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+    transform: translateY(0);
+    background: var(--surface-hover);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
 }
 
 .theme-toggle:focus-visible {
@@ -164,6 +179,12 @@ a:hover {
 .nav-toggle:hover {
     border-color: var(--accent-color);
     transform: translateY(-1px);
+}
+
+.nav-toggle:active {
+    transform: translateY(0);
+    background: var(--surface-hover);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.18);
 }
 
 .nav-toggle:focus-visible {
@@ -278,9 +299,11 @@ p { margin-bottom: 1.5rem; }
 }
 
 .hero-title {
-    font-size: clamp(2.3rem, 1.5rem + 3.2vw, 3.5rem);
+    font-size: clamp(1.75rem, 1.05rem + 2.8vw, 3.5rem);
     margin-top: 0;
     margin-bottom: clamp(1.4rem, 4vw, 2.6rem);
+    line-height: 1.05;
+    white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -369,6 +392,12 @@ p { margin-bottom: 1.5rem; }
     color: var(--text-main) !important;
     border-bottom-color: var(--action-color);
     transform: translateX(4px);
+}
+
+.view-all:active,
+.read-more:active {
+    transform: translateX(2px);
+    color: var(--accent-color) !important;
 }
 
 /* Project Cards */
@@ -543,6 +572,10 @@ p { margin-bottom: 1.5rem; }
     color: var(--accent-color);
 }
 
+.item-title a:active {
+    color: var(--accent-hover);
+}
+
 .item-meta {
     color: var(--text-muted);
     font-family: var(--font-mono);
@@ -565,12 +598,22 @@ p { margin-bottom: 1.5rem; }
         box-shadow: var(--shadow-sm);
     }
 
+    .nav-toggle:active {
+        background: var(--surface-hover);
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.18);
+    }
+
     .theme-toggle {
         position: fixed;
         top: 1rem;
         right: 4.25rem;
         z-index: 30;
         box-shadow: var(--shadow-sm);
+    }
+
+    .theme-toggle:active {
+        background: var(--surface-hover);
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.18);
     }
 
     .nav-backdrop {
@@ -685,7 +728,7 @@ p { margin-bottom: 1.5rem; }
     }
 
     .hero-title {
-        font-size: clamp(2rem, 1.4rem + 4vw, 2.4rem);
+        font-size: clamp(1.45rem, 0.95rem + 5vw, 2rem);
     }
 
     .hero-subtitle {
