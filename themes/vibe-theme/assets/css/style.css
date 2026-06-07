@@ -71,6 +71,11 @@ body.is-mobile-frame {
     overflow: hidden;
 }
 
+body.is-nav-open .main-content,
+body.is-nav-open .site-footer {
+    visibility: hidden;
+}
+
 a, a:visited, a:active {
     color: var(--accent-color);
     text-decoration: none;
@@ -328,13 +333,20 @@ a:hover {
 
 /* Footer */
 .site-footer {
-    padding: 2rem 0;
+    position: relative;
+    min-height: 6rem;
+    padding: 0;
     border-top: 1px solid var(--border-color);
     color: var(--text-muted);
     font-size: 0.9rem;
 }
 
 .footer-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -744,7 +756,7 @@ p { margin-bottom: 1.5rem; }
         position: fixed;
         top: 1.1rem;
         right: 1rem;
-        z-index: 30;
+        z-index: 1002;
         box-shadow: var(--shadow-sm);
     }
 
@@ -790,7 +802,7 @@ p { margin-bottom: 1.5rem; }
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.25s ease;
-        z-index: 19;
+        z-index: 990;
     }
 
     .nav-backdrop.is-visible {
@@ -806,14 +818,14 @@ p { margin-bottom: 1.5rem; }
         bottom: 0;
         left: 0;
         width: 100vw;
-        padding: clamp(5rem, 16vw, 6.5rem) clamp(1.5rem, 5vw, 3rem) clamp(1.5rem, 5vw, 3rem);
+        padding: clamp(1.5rem, 5vw, 3rem);
         background: var(--bg-color);
         border: 0;
         box-shadow: inset 0 -1px 0 var(--border-color);
         transform: translateY(-100%);
         opacity: 0;
         transition: transform 0.32s ease, opacity 0.32s ease;
-        z-index: 20;
+        z-index: 1000;
         overflow-y: auto;
     }
 
@@ -908,6 +920,11 @@ p { margin-bottom: 1.5rem; }
     .site-footer::before {
         top: -18px;
         background: linear-gradient(to top, var(--bg-color), rgba(0, 0, 0, 0));
+    }
+
+    .site-footer {
+        min-height: 5rem;
+        padding-bottom: 0.9rem;
     }
 }
 
@@ -1095,6 +1112,14 @@ p { margin-bottom: 1.5rem; }
     .site-footer::before {
         top: -18px;
         background: linear-gradient(to top, var(--bg-color), rgba(0, 0, 0, 0));
+    }
+
+    .site-footer {
+        min-height: 5.5rem;
+    }
+
+    .footer-inner {
+        bottom: 0.9rem;
     }
 }
 

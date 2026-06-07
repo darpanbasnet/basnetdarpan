@@ -173,6 +173,7 @@
                 backdrop.hidden = !shouldShowDrawer;
                 backdrop.classList.toggle('is-visible', shouldShowDrawer);
                 root.classList.toggle('is-menu-open', shouldShowDrawer);
+                document.body.classList.toggle('is-nav-open', shouldShowDrawer);
             };
 
             syncState(false);
