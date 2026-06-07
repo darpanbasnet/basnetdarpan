@@ -48,6 +48,11 @@
         
         {{ partial "footer.html" . }}
     </div>
+    <button id="scroll-cue" class="scroll-cue" type="button" aria-label="Scroll to next section" hidden>
+        <svg class="scroll-cue__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 6v12M6.5 12.5l5.5 5.5 5.5-5.5" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
     <script>
         (() => {
             const backButton = document.getElementById('back-button');
@@ -55,10 +60,67 @@
             const toggle = document.getElementById('nav-toggle');
             const nav = document.getElementById('site-nav');
             const backdrop = document.getElementById('nav-backdrop');
+            const scrollCue = document.getElementById('scroll-cue');
+            const scroller = document.querySelector('.main-content');
             const root = document.documentElement;
             const mobileQuery = window.matchMedia('(max-width: 768px)');
             const syncMobileFrame = () => {
                 document.body.classList.toggle('is-mobile-frame', mobileQuery.matches);
+            };
+            const getScrollTargets = () => {
+                if (!scroller) {
+                    return [];
+                }
+
+                return Array.from(scroller.querySelectorAll('h2, h3'))
+                    .filter((element) => element.getBoundingClientRect().height > 0);
+            };
+            const getElementTop = (element) => {
+                if (!scroller) {
+                    return 0;
+                }
+
+                const scrollerRect = scroller.getBoundingClientRect();
+                const elementRect = element.getBoundingClientRect();
+                return elementRect.top - scrollerRect.top + scroller.scrollTop;
+            };
+            const getNextTarget = () => {
+                if (!scroller) {
+                    return null;
+                }
+
+                const currentTop = scroller.scrollTop + 24;
+                const targets = getScrollTargets();
+
+                return targets.find((element) => getElementTop(element) > currentTop) || null;
+            };
+            const syncScrollCue = () => {
+                if (!scrollCue || !scroller) {
+                    return;
+                }
+
+                const hasOverflow = scroller.scrollHeight > scroller.clientHeight + 8;
+                const nearBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 24;
+                const nextTarget = getNextTarget();
+                const shouldShow = hasOverflow && !nearBottom && nextTarget;
+
+                scrollCue.hidden = !shouldShow;
+                scrollCue.classList.toggle('is-visible', Boolean(shouldShow));
+            };
+            const scrollToNextTarget = () => {
+                if (!scroller) {
+                    return;
+                }
+
+                const nextTarget = getNextTarget();
+                if (!nextTarget) {
+                    return;
+                }
+
+                scroller.scrollTo({
+                    top: getElementTop(nextTarget) - 20,
+                    behavior: 'smooth',
+                });
             };
 
             const applyTheme = (theme) => {
@@ -152,6 +214,14 @@
                         window.location.href = document.body.dataset.homeUrl || '/';
                     }
                 });
+            }
+
+            if (scrollCue && scroller) {
+                scrollCue.addEventListener('click', scrollToNextTarget);
+                scroller.addEventListener('scroll', syncScrollCue, { passive: true });
+                window.addEventListener('resize', syncScrollCue);
+                window.addEventListener('load', syncScrollCue);
+                syncScrollCue();
             }
         })();
     </script>
