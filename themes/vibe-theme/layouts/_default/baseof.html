@@ -57,6 +57,9 @@
             const backdrop = document.getElementById('nav-backdrop');
             const root = document.documentElement;
             const mobileQuery = window.matchMedia('(max-width: 768px)');
+            const syncMobileFrame = () => {
+                document.body.classList.toggle('is-mobile-frame', mobileQuery.matches);
+            };
 
             const applyTheme = (theme) => {
                 const nextTheme = theme === 'light' ? 'light' : 'dark';
@@ -81,6 +84,7 @@
                 storedTheme = 'dark';
             }
             applyTheme(storedTheme);
+            syncMobileFrame();
 
             if (!toggle || !nav || !backdrop) {
                 if (backButton) {
@@ -129,6 +133,7 @@
             });
 
             mobileQuery.addEventListener('change', () => {
+                syncMobileFrame();
                 syncState(false);
             });
 
