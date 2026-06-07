@@ -2,6 +2,10 @@
     <div class="header-inner">
         {{ $site := .Site }}
         {{ $current := . }}
+        <a href="{{ "/" | relLangURL }}" class="site-brand{{ if not .IsHome }} site-brand--offset{{ end }}">
+            Hi, I&apos;m Darpan Basnet
+        </a>
+        <div class="header-actions">
         {{ if not .IsHome }}
         <button
             id="back-button"
@@ -25,7 +29,7 @@
                 <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
             </svg>
             <svg class="theme-icon theme-icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
             </svg>
         </button>
         {{ with $site.Menus.main }}
@@ -56,5 +60,6 @@
             </ul>
         </nav>
         {{ end }}
+        </div>
     </div>
 </header>
