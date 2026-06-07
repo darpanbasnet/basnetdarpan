@@ -705,7 +705,7 @@ p { margin-bottom: 1.5rem; }
 
     .site-brand {
         position: fixed;
-        top: 1.05rem;
+        top: 1.5rem;
         left: 50%;
         transform: translateX(-50%);
         max-width: min(58vw, 17rem);
@@ -1015,7 +1015,7 @@ p { margin-bottom: 1.5rem; }
 
     .site-brand {
         max-width: min(52vw, 14rem);
-        top: 1rem;
+        top: 1.5rem;
         font-size: clamp(1.02rem, 0.95rem + 1vw, 1.28rem);
     }
 
