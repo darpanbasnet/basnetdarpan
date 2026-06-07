@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Windows on My New Hugo Site</title>
-    <link>http://example.org/tags/windows/</link>
-    <description>Recent content in Windows on My New Hugo Site</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 15 Sep 2025 11:00:00 -0600</lastBuildDate>
-    <atom:link href="http://example.org/tags/windows/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SOC Investigation 101: Tracing a Suspicious PowerShell Execution</title>
-      <link>http://example.org/posts/investigating-suspicious-powershell/</link>
-      <pubDate>Mon, 15 Sep 2025 11:00:00 -0600</pubDate>
-      <guid>http://example.org/posts/investigating-suspicious-powershell/</guid>
-      <description>This post walks through a practical SOC investigation — analyzing PowerShell alerts, correlating events, and validating malicious activity using Elastic Stack and Defender telemetry.</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Windows on Darpan Basnet</title>
+		<link>http://localhost:1313/tags/windows/</link>
+		<description>Recent content in Windows on Darpan Basnet</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 27 May 2026 10:30:00 -0600</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Threat Hunting DLL Side-Loading from Social Lures</title>
+				<link>http://localhost:1313/posts/threat-hunting-dll-side-loading/</link>
+				<pubDate>Wed, 27 May 2026 10:30:00 -0600</pubDate>
+				<guid>http://localhost:1313/posts/threat-hunting-dll-side-loading/</guid>
+				<description>&lt;p&gt;DLL side-loading is effective because it abuses trust. A signed or legitimate executable runs, Windows searches for a dependency, and the attacker places a malicious DLL where the executable will load it. To an analyst, the first process may look normal. The behavior around it is where the hunt gets interesting.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

@@ -1,0 +1,18 @@
+<header class="site-header">
+    <div class="header-inner">
+        <div class="site-branding">
+            <a href="{{ .Site.BaseURL }}" class="site-title">{{ .Site.Title }}</a>
+        </div>
+        <nav class="site-nav">
+            <ul class="menu">
+                {{ $current := . }}
+                {{ range .Site.Menus.main }}
+                {{ $active := or (eq $current.RelPermalink .URL) (and (ne .URL "/") (hasPrefix $current.RelPermalink .URL)) }}
+                <li class="menu-item">
+                    <a href="{{ .URL }}" class="{{ if $active }}active{{ end }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</header>

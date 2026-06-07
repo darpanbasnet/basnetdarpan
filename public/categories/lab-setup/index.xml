@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Lab Setup on Darpan Basnet</title>
+		<link>http://localhost:1313/categories/lab-setup/</link>
+		<description>Recent content in Lab Setup on Darpan Basnet</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Jun 2026 10:00:00 -0500</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/lab-setup/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Automated SIEM Homelab</title>
+				<link>http://localhost:1313/projects/automated-siem-homelab/</link>
+				<pubDate>Mon, 01 Jun 2026 10:00:00 -0500</pubDate>
+				<guid>http://localhost:1313/projects/automated-siem-homelab/</guid>
+				<description>&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;&#xA;&lt;p&gt;This project details the architecture and deployment of an automated SIEM homelab. The primary goal was to create a reproducible environment for testing threat hunting hypotheses and developing custom detections.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

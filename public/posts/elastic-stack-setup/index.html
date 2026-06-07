@@ -3,9 +3,9 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon) &middot; Darpan Basnet</title>
+<title>Building a Threat Hunting Lab with Elastic Stack &middot; Darpan Basnet</title>
 
-<meta name="description" content="Upcoming guide: installing and configuring Elastic Stack for detection, telemetry collection, and threat hunting.">
+<meta name="description" content="A practical blueprint for standing up an Elastic-based detection lab with useful telemetry, repeatable attack simulation, and hunt-ready dashboards.">
 <meta name="author" content="Darpan Basnet">
 <link rel="canonical" href="http://localhost:1313/posts/elastic-stack-setup/">
 
@@ -18,8 +18,8 @@
 
 
 
-<meta property="og:title" content="How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon)">
-<meta property="og:description" content="Upcoming guide: installing and configuring Elastic Stack for detection, telemetry collection, and threat hunting.">
+<meta property="og:title" content="Building a Threat Hunting Lab with Elastic Stack">
+<meta property="og:description" content="A practical blueprint for standing up an Elastic-based detection lab with useful telemetry, repeatable attack simulation, and hunt-ready dashboards.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://localhost:1313/posts/elastic-stack-setup/">
 
@@ -27,30 +27,38 @@
 
 <meta property="article:section" content="posts">
 
+<meta property="article:tag" content="elastic">
 
-<meta property="article:published_time" content="2026-01-26 12:30:00 -0600 CST">
+<meta property="article:tag" content="siem">
+
+<meta property="article:tag" content="homelab">
+
+<meta property="article:tag" content="detection">
 
 
-<meta property="article:modified_time" content="2026-01-26 12:30:00 -0600 CST">
+<meta property="article:published_time" content="2026-05-29 09:00:00 -0600 -0600">
+
+
+<meta property="article:modified_time" content="2026-05-29 09:00:00 -0600 -0600">
 
 
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon)">
-<meta name="twitter:description" content="Upcoming guide: installing and configuring Elastic Stack for detection, telemetry collection, and threat hunting.">
+<meta name="twitter:title" content="Building a Threat Hunting Lab with Elastic Stack">
+<meta name="twitter:description" content="A practical blueprint for standing up an Elastic-based detection lab with useful telemetry, repeatable attack simulation, and hunt-ready dashboards.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "How I Set Up My Threat Hunting \u0026 Detection Engineering Lab (coming soon)",
-  "name": "How I Set Up My Threat Hunting \u0026 Detection Engineering Lab (coming soon)",
-  "description": "Upcoming guide: installing and configuring Elastic Stack for detection, telemetry collection, and threat hunting.",
+  "headline": "Building a Threat Hunting Lab with Elastic Stack",
+  "name": "Building a Threat Hunting Lab with Elastic Stack",
+  "description": "A practical blueprint for standing up an Elastic-based detection lab with useful telemetry, repeatable attack simulation, and hunt-ready dashboards.",
   "url": "http:\/\/localhost:1313\/posts\/elastic-stack-setup\/",
   
-  "datePublished": "2026-01-26T12:30:00-06:00",
-  "dateModified": "2026-01-26T12:30:00-06:00",
+  "datePublished": "2026-05-29T09:00:00-06:00",
+  "dateModified": "2026-05-29T09:00:00-06:00",
   "author": {
     "@type": "Person",
     "name": "Darpan Basnet"
@@ -75,7 +83,12 @@
 
 
 
-<link rel="stylesheet" href="/css/style.1a6922fd406c557ceb6a9234be6392698a202059cc02f0077947a4ee17161f8e.css" integrity="sha256-Gmki/UBsVXzrapI0vmOSaYogIFnMAvAHeUek7hcWH44=">
+<link rel="stylesheet" href="/css/style.d30885263156e90a16625c3425f6014a53e48709d913ba5def08a5de7046fe9d.css" integrity="sha256-0wiFJjFW6QoWYlw0JfYBSlPkhwnZE7pd7wil3nBG/p0=">
+
+
+  
+  <link rel="stylesheet" href="/css/custom.min.2167e4db80eb536ac7e46da5159e4917c00b2e754a445d277951d4d74433ff1d.css" integrity="sha256-IWfk24DrU2rH5G2lFZ5JF8ALLnVKRF0neVHU10Qz/x0=">
+
 
 
 
@@ -107,6 +120,10 @@
           
           <li>
             <a href="/about/" class="">About</a>
+          </li>
+          
+          <li>
+            <a href="/posts/" class="">Writing</a>
           </li>
           
           <li>
@@ -161,17 +178,17 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <a href="/">Home</a>
-    </li><li class="breadcrumb-item"><a href="/posts/">All Posts</a></li><li class="breadcrumb-item" aria-current="page">How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon)</li>
+    </li><li class="breadcrumb-item"><a href="/posts/">All Posts</a></li><li class="breadcrumb-item" aria-current="page">Building a Threat Hunting Lab with Elastic Stack</li>
   </ol>
 </nav>
 
 
-        <h1 class="post-title">How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon)</h1>
+        <h1 class="post-title">Building a Threat Hunting Lab with Elastic Stack</h1>
         <div class="post-meta">
           
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              <time datetime="2026-01-26T12:30:00-06:00">Jan 26, 2026</time>
+              <time datetime="2026-05-29T09:00:00-06:00">May 29, 2026</time>
             </span>
           
           
@@ -186,12 +203,89 @@
       
 
       <div class="post-content">
-        <p>This post will provide a step-by-step guide to setting up Elastic Stack (Elasticsearch, Logstash, Kibana, Beats) for detection and response, including required telemetry sources, mappings, dashboards, and hunting queries — coming soon.</p>
-<p>Stay tuned for a full walkthrough and best practices.</p>
+        <p>A detection lab should answer one question quickly: can I observe the behavior I care about, and can I turn that observation into a useful analytic? The lab does not need to be large, but it does need to be repeatable. I like Elastic for this kind of work because it gives me ingestion, search, dashboards, and detection rules in one place without hiding the raw event details.</p>
+<h2 id="lab-goals">Lab Goals</h2>
+<p>The first goal is telemetry coverage. A lab that only collects one type of event will teach you one type of detection. For Windows-focused hunting, I want at minimum:</p>
+<ul>
+<li>Windows event logs for logon, process creation, service creation, scheduled tasks, and PowerShell activity.</li>
+<li>Sysmon with a tuned configuration so process ancestry, network connections, image loads, and file events are easier to reason about.</li>
+<li>Defender or other endpoint alerts when available, because detections should be compared against what the endpoint already knows.</li>
+<li>DNS and proxy-style visibility if the lab includes outbound command-and-control simulation.</li>
+<li>Authentication logs from cloud or identity systems when the hunt includes identity abuse.</li>
+</ul>
+<p>The second goal is attack replay. If I cannot rerun the behavior, I cannot confidently tune the rule. Atomic Red Team, Caldera, custom PowerShell, and small Python scripts are useful here because they let me generate known behaviors and compare the expected event trail against what Elastic actually received.</p>
+<h2 id="basic-architecture">Basic Architecture</h2>
+<p>My preferred small lab layout is simple:</p>
+<ul>
+<li>One Elastic node for Elasticsearch and Kibana.</li>
+<li>One Windows workstation target.</li>
+<li>One Windows server or domain controller if testing domain behaviors.</li>
+<li>One Linux host for attacker tooling, packet capture, and automation.</li>
+<li>Elastic Agent or Beats on endpoints depending on what I am testing.</li>
+</ul>
+<p>This is enough to test many useful detections: suspicious PowerShell, credential access attempts, persistence, lateral movement, unusual service creation, and suspicious network egress.</p>
+<h2 id="ingestion-priorities">Ingestion Priorities</h2>
+<p>Start with endpoint data before adding complexity. Process creation is the backbone of most endpoint hunts because it links user context, parent process, command line, executable path, and timing. After process creation, add PowerShell logs, Sysmon image load events, and authentication events.</p>
+<p>For PowerShell, I care about these data points:</p>
+<ul>
+<li>Script block content.</li>
+<li>Module logging.</li>
+<li>Process ancestry.</li>
+<li>User and host context.</li>
+<li>Encoded command usage.</li>
+<li>Network activity close to execution time.</li>
+</ul>
+<p>For DLL side-loading and suspicious binary execution, Sysmon image load telemetry becomes important. It is noisy, so I usually test it in the lab first and then decide which paths, vendors, and process names deserve attention.</p>
+<h2 id="detection-workflow">Detection Workflow</h2>
+<p>The workflow I use is:</p>
+<ol>
+<li>Pick a technique or behavior.</li>
+<li>Generate it in the lab.</li>
+<li>Confirm raw telemetry is present.</li>
+<li>Write a first-pass query.</li>
+<li>Add context fields that help triage.</li>
+<li>Test benign lookalikes.</li>
+<li>Promote the query into a detection rule only after I understand the failure modes.</li>
+</ol>
+<p>For example, suspicious PowerShell should not be detected only by the string <code>EncodedCommand</code>. That catches some behavior, but it misses plenty and creates weak triage. A better analytic combines encoded commands, process ancestry, unusual child processes, downloaded content, suspicious flags, and the user or host role.</p>
+<h2 id="dashboards-that-actually-help">Dashboards That Actually Help</h2>
+<p>Dashboards should help answer triage questions, not just look busy. The most useful panels in my lab are:</p>
+<ul>
+<li>Top parent-child process pairs.</li>
+<li>Rare process execution by host.</li>
+<li>PowerShell executions with command-line previews.</li>
+<li>New services and scheduled tasks.</li>
+<li>Outbound connections grouped by process.</li>
+<li>Authentication failures and successes by account.</li>
+</ul>
+<p>When I am testing a detection, I want the dashboard to show the surrounding story: what launched, what user ran it, what network connection followed, and whether the same pattern happened elsewhere.</p>
+<h2 id="what-makes-the-lab-useful">What Makes the Lab Useful</h2>
+<p>The lab becomes valuable when it produces repeatable evidence. Every detection should have:</p>
+<ul>
+<li>A short description of the behavior.</li>
+<li>Required data sources.</li>
+<li>A known test procedure.</li>
+<li>Example matching events.</li>
+<li>Known false positives.</li>
+<li>Triage notes.</li>
+</ul>
+<p>That turns the lab into more than a playground. It becomes a place to build detection knowledge that can move into production with fewer surprises.</p>
 
       </div>
 
       <footer>
+        
+        <div class="post-tags">
+          
+            <a href="/tags/elastic/" class="tag-link">elastic</a>
+          
+            <a href="/tags/siem/" class="tag-link">siem</a>
+          
+            <a href="/tags/homelab/" class="tag-link">homelab</a>
+          
+            <a href="/tags/detection/" class="tag-link">detection</a>
+          
+        </div>
         
       </footer>
     </article>
@@ -208,7 +302,16 @@
   
     <aside class="toc">
   <h2 class="toc-title">Table of Contents</h2>
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lab-goals">Lab Goals</a></li>
+    <li><a href="#basic-architecture">Basic Architecture</a></li>
+    <li><a href="#ingestion-priorities">Ingestion Priorities</a></li>
+    <li><a href="#detection-workflow">Detection Workflow</a></li>
+    <li><a href="#dashboards-that-actually-help">Dashboards That Actually Help</a></li>
+    <li><a href="#what-makes-the-lab-useful">What Makes the Lab Useful</a></li>
+  </ul>
+</nav>
 </aside>
   
 
@@ -223,9 +326,13 @@
   <ul>
     
     
-    <li><a href="/posts/elastic-stack-setup/">How I Set Up My Threat Hunting &amp; Detection Engineering Lab (coming soon)</a></li>
+    <li><a href="/posts/elastic-stack-setup/">Building a Threat Hunting Lab with Elastic Stack</a></li>
     
-    <li><a href="/posts/threat-hunting-dll-side-loading/">Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures</a></li>
+    <li><a href="/posts/threat-hunting-dll-side-loading/">Threat Hunting DLL Side-Loading from Social Lures</a></li>
+    
+    <li><a href="/posts/prioritizing-vulnerabilities-with-context/">Prioritizing Vulnerabilities with CVSS, EPSS, SSVC, and CKEV</a></li>
+    
+    <li><a href="/posts/sentinel-defender-alert-workflows/">Making Sentinel and Defender Alerts Easier to Triage</a></li>
     
   </ul>
 </div>
@@ -235,9 +342,13 @@
   
   <ul>
     
+    <li><a href="/categories/detection-engineering/">Detection Engineering (2)</a></li>
+    
+    <li><a href="/categories/incident-response/">Incident Response (2)</a></li>
+    
     <li><a href="/categories/threat-hunting/">Threat Hunting (2)</a></li>
     
-    <li><a href="/categories/detection-engineering/">Detection Engineering (1)</a></li>
+    <li><a href="/categories/soc-investigation/">Soc Investigation (1)</a></li>
     
   </ul>
   
@@ -248,11 +359,41 @@
   
   <ul>
     
+    <li><a href="/tags/detection/">Detection</a></li>
+    
+    <li><a href="/tags/automation/">Automation</a></li>
+    
+    <li><a href="/tags/ckev/">Ckev</a></li>
+    
+    <li><a href="/tags/cvss/">Cvss</a></li>
+    
+    <li><a href="/tags/defender-xdr/">Defender-Xdr</a></li>
+    
     <li><a href="/tags/dll/">Dll</a></li>
+    
+    <li><a href="/tags/elastic/">Elastic</a></li>
+    
+    <li><a href="/tags/epss/">Epss</a></li>
+    
+    <li><a href="/tags/homelab/">Homelab</a></li>
+    
+    <li><a href="/tags/linkedin/">Linkedin</a></li>
+    
+    <li><a href="/tags/logic-apps/">Logic-Apps</a></li>
+    
+    <li><a href="/tags/sentinel/">Sentinel</a></li>
     
     <li><a href="/tags/side-loading/">Side-Loading</a></li>
     
-    <li><a href="/tags/threat-hunting/">Threat-Hunting</a></li>
+    <li><a href="/tags/siem/">Siem</a></li>
+    
+    <li><a href="/tags/soc/">Soc</a></li>
+    
+    <li><a href="/tags/ssvc/">Ssvc</a></li>
+    
+    <li><a href="/tags/vulnerability-management/">Vulnerability-Management</a></li>
+    
+    <li><a href="/tags/windows/">Windows</a></li>
     
   </ul>
   
@@ -273,7 +414,7 @@
   
   <a href="/posts/threat-hunting-dll-side-loading/" class="nav-prev">
     <span class="nav-label">&larr; Previous Post</span>
-    <span class="nav-title">Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures</span>
+    <span class="nav-title">Threat Hunting DLL Side-Loading from Social Lures</span>
   </a>
   
   
@@ -283,6 +424,20 @@
 
   
     
+
+<section class="related-posts">
+  <h3 class="related-title">Related Posts</h3>
+  <div class="related-grid">
+    
+    <div class="related-card">
+      <a href="/posts/threat-hunting-dll-side-loading/">
+        <h4 class="related-card-title">Threat Hunting DLL Side-Loading from Social Lures</h4>
+        <time class="related-card-date" datetime="2026-05-27">May 27, 2026</time>
+      </a>
+    </div>
+    
+  </div>
+</section>
 
   
 </div>

@@ -3,9 +3,9 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures &middot; Darpan Basnet</title>
+<title>Threat Hunting DLL Side-Loading from Social Lures &middot; Darpan Basnet</title>
 
-<meta name="description" content="Overview and upcoming post about simulating and hunting DLL side-loading delivered via social-engineered LinkedIn messages.">
+<meta name="description" content="How I think about hunting DLL side-loading when the initial access story starts with a social lure and ends with trusted binaries loading untrusted code.">
 <meta name="author" content="Darpan Basnet">
 <link rel="canonical" href="http://localhost:1313/posts/threat-hunting-dll-side-loading/">
 
@@ -18,8 +18,8 @@
 
 
 
-<meta property="og:title" content="Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures">
-<meta property="og:description" content="Overview and upcoming post about simulating and hunting DLL side-loading delivered via social-engineered LinkedIn messages.">
+<meta property="og:title" content="Threat Hunting DLL Side-Loading from Social Lures">
+<meta property="og:description" content="How I think about hunting DLL side-loading when the initial access story starts with a social lure and ends with trusted binaries loading untrusted code.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://localhost:1313/posts/threat-hunting-dll-side-loading/">
 
@@ -27,36 +27,40 @@
 
 <meta property="article:section" content="posts">
 
-<meta property="article:tag" content="threat-hunting">
-
 <meta property="article:tag" content="dll">
 
 <meta property="article:tag" content="side-loading">
 
+<meta property="article:tag" content="windows">
 
-<meta property="article:published_time" content="2026-01-26 12:00:00 -0600 CST">
+<meta property="article:tag" content="linkedin">
+
+<meta property="article:tag" content="detection">
 
 
-<meta property="article:modified_time" content="2026-01-26 12:00:00 -0600 CST">
+<meta property="article:published_time" content="2026-05-27 10:30:00 -0600 -0600">
+
+
+<meta property="article:modified_time" content="2026-05-27 10:30:00 -0600 -0600">
 
 
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures">
-<meta name="twitter:description" content="Overview and upcoming post about simulating and hunting DLL side-loading delivered via social-engineered LinkedIn messages.">
+<meta name="twitter:title" content="Threat Hunting DLL Side-Loading from Social Lures">
+<meta name="twitter:description" content="How I think about hunting DLL side-loading when the initial access story starts with a social lure and ends with trusted binaries loading untrusted code.">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures",
-  "name": "Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures",
-  "description": "Overview and upcoming post about simulating and hunting DLL side-loading delivered via social-engineered LinkedIn messages.",
+  "headline": "Threat Hunting DLL Side-Loading from Social Lures",
+  "name": "Threat Hunting DLL Side-Loading from Social Lures",
+  "description": "How I think about hunting DLL side-loading when the initial access story starts with a social lure and ends with trusted binaries loading untrusted code.",
   "url": "http:\/\/localhost:1313\/posts\/threat-hunting-dll-side-loading\/",
   
-  "datePublished": "2026-01-26T12:00:00-06:00",
-  "dateModified": "2026-01-26T12:00:00-06:00",
+  "datePublished": "2026-05-27T10:30:00-06:00",
+  "dateModified": "2026-05-27T10:30:00-06:00",
   "author": {
     "@type": "Person",
     "name": "Darpan Basnet"
@@ -81,7 +85,12 @@
 
 
 
-<link rel="stylesheet" href="/css/style.1a6922fd406c557ceb6a9234be6392698a202059cc02f0077947a4ee17161f8e.css" integrity="sha256-Gmki/UBsVXzrapI0vmOSaYogIFnMAvAHeUek7hcWH44=">
+<link rel="stylesheet" href="/css/style.d30885263156e90a16625c3425f6014a53e48709d913ba5def08a5de7046fe9d.css" integrity="sha256-0wiFJjFW6QoWYlw0JfYBSlPkhwnZE7pd7wil3nBG/p0=">
+
+
+  
+  <link rel="stylesheet" href="/css/custom.min.2167e4db80eb536ac7e46da5159e4917c00b2e754a445d277951d4d74433ff1d.css" integrity="sha256-IWfk24DrU2rH5G2lFZ5JF8ALLnVKRF0neVHU10Qz/x0=">
+
 
 
 
@@ -113,6 +122,10 @@
           
           <li>
             <a href="/about/" class="">About</a>
+          </li>
+          
+          <li>
+            <a href="/posts/" class="">Writing</a>
           </li>
           
           <li>
@@ -167,17 +180,17 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <a href="/">Home</a>
-    </li><li class="breadcrumb-item"><a href="/posts/">All Posts</a></li><li class="breadcrumb-item" aria-current="page">Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures</li>
+    </li><li class="breadcrumb-item"><a href="/posts/">All Posts</a></li><li class="breadcrumb-item" aria-current="page">Threat Hunting DLL Side-Loading from Social Lures</li>
   </ol>
 </nav>
 
 
-        <h1 class="post-title">Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures</h1>
+        <h1 class="post-title">Threat Hunting DLL Side-Loading from Social Lures</h1>
         <div class="post-meta">
           
             <span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              <time datetime="2026-01-26T12:00:00-06:00">Jan 26, 2026</time>
+              <time datetime="2026-05-27T10:30:00-06:00">May 27, 2026</time>
             </span>
           
           
@@ -192,8 +205,64 @@
       
 
       <div class="post-content">
-        <p>This post will cover a real-world technique where adversaries use LinkedIn messaging to deliver malicious payloads that leverage DLL side-loading. I will describe the simulation approach, required telemetry, hunting queries, and recommended tools in the full article — coming soon.</p>
-<p>Stay tuned for a detailed walkthrough and detection guidance.</p>
+        <p>DLL side-loading is effective because it abuses trust. A signed or legitimate executable runs, Windows searches for a dependency, and the attacker places a malicious DLL where the executable will load it. To an analyst, the first process may look normal. The behavior around it is where the hunt gets interesting.</p>
+<p>Social lures make this technique more realistic. A fake recruiter message, a shared archive, or a &ldquo;portfolio review&rdquo; file can convince a user to extract and run something from a writable directory. The payload does not need to look like malware at first glance if the execution chain leans on a trusted application.</p>
+<h2 id="hunt-hypothesis">Hunt Hypothesis</h2>
+<p>The hypothesis I would test is:</p>
+<blockquote>
+<p>A user executes a legitimate binary from a user-writable directory, and that binary loads a DLL from the same suspicious directory or from another non-standard path.</p>
+</blockquote>
+<p>This is a stronger starting point than looking for one malicious filename. It focuses on behavior:</p>
+<ul>
+<li>Legitimate executable in an unusual path.</li>
+<li>DLL loaded from a user profile, downloads folder, temp folder, or extracted archive.</li>
+<li>Parent process tied to user interaction, such as Explorer, a browser, Teams, Outlook, or an archive utility.</li>
+<li>Network activity shortly after execution.</li>
+<li>File creation events close to the execution time.</li>
+</ul>
+<h2 id="data-sources">Data Sources</h2>
+<p>For Windows hosts, I want:</p>
+<ul>
+<li>Process creation logs.</li>
+<li>Sysmon image load events.</li>
+<li>File creation events.</li>
+<li>Network connection events.</li>
+<li>Archive extraction or browser download evidence when available.</li>
+<li>EDR process tree and reputation data.</li>
+</ul>
+<p>Sysmon Event ID 7 can be noisy, but in a lab it is useful for building the analytic. In production, I would scope the rule carefully to suspicious directories, rare process names, or known side-loading candidates.</p>
+<h2 id="useful-questions">Useful Questions</h2>
+<p>During triage, I would ask:</p>
+<ul>
+<li>Did the executable run from <code>Downloads</code>, <code>Desktop</code>, <code>AppData</code>, <code>Temp</code>, or an extracted archive?</li>
+<li>Did the process load DLLs from the same directory?</li>
+<li>Is the executable signed, and does the path match the expected vendor installation path?</li>
+<li>What parent process launched it?</li>
+<li>Did it make network connections after loading the DLL?</li>
+<li>Was the same file seen on other hosts?</li>
+<li>Did the user receive a related email, chat message, or browser download?</li>
+</ul>
+<p>These questions help separate normal software behavior from a suspicious execution chain.</p>
+<h2 id="example-detection-logic">Example Detection Logic</h2>
+<p>A first-pass hunt query can look for signed executables running outside expected locations and loading DLLs from user-writable paths. The exact query depends on the telemetry schema, but the logic is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>process.executable in user-writable path
+</span></span><span style="display:flex;"><span>AND loaded_module.path in user-writable path
+</span></span><span style="display:flex;"><span>AND process.parent.name in common user-facing launchers
+</span></span><span style="display:flex;"><span>AND process.code_signature.trusted == true
+</span></span></code></pre></div><p>That is not enough for a high-confidence alert by itself, but it is a strong hunt lens. Add rarity, network activity, or suspicious filenames to increase confidence.</p>
+<h2 id="lab-simulation">Lab Simulation</h2>
+<p>In a lab, I would simulate the pattern with a known vulnerable or test-safe binary, a harmless DLL, and an extracted folder under a user profile. The goal is not to run real malware. The goal is to validate whether telemetry captures:</p>
+<ul>
+<li>The original file write.</li>
+<li>The executable launch.</li>
+<li>The DLL load.</li>
+<li>The parent-child relationship.</li>
+<li>Any network activity.</li>
+</ul>
+<p>If one of those pieces is missing, the detection may fail in production.</p>
+<h2 id="response-notes">Response Notes</h2>
+<p>If the hunt returns a likely hit, preserve the folder contents, collect the process tree, hash the executable and DLL, and check for persistence. Side-loading is often a staging technique, so the next behaviors may include credential access, discovery, scheduled tasks, registry run keys, or outbound beaconing.</p>
+<p>The important lesson is that trusted binaries do not guarantee trusted behavior. Context is the detection.</p>
 
       </div>
 
@@ -201,11 +270,15 @@
         
         <div class="post-tags">
           
-            <a href="/tags/threat-hunting/" class="tag-link">threat-hunting</a>
-          
             <a href="/tags/dll/" class="tag-link">dll</a>
           
             <a href="/tags/side-loading/" class="tag-link">side-loading</a>
+          
+            <a href="/tags/windows/" class="tag-link">windows</a>
+          
+            <a href="/tags/linkedin/" class="tag-link">linkedin</a>
+          
+            <a href="/tags/detection/" class="tag-link">detection</a>
           
         </div>
         
@@ -224,7 +297,16 @@
   
     <aside class="toc">
   <h2 class="toc-title">Table of Contents</h2>
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hunt-hypothesis">Hunt Hypothesis</a></li>
+    <li><a href="#data-sources">Data Sources</a></li>
+    <li><a href="#useful-questions">Useful Questions</a></li>
+    <li><a href="#example-detection-logic">Example Detection Logic</a></li>
+    <li><a href="#lab-simulation">Lab Simulation</a></li>
+    <li><a href="#response-notes">Response Notes</a></li>
+  </ul>
+</nav>
 </aside>
   
 
@@ -239,7 +321,13 @@
   <ul>
     
     
-    <li><a href="/posts/threat-hunting-dll-side-loading/">Threat Hunting: Malicious DLL Side-Loading via LinkedIn Lures</a></li>
+    <li><a href="/posts/elastic-stack-setup/">Building a Threat Hunting Lab with Elastic Stack</a></li>
+    
+    <li><a href="/posts/threat-hunting-dll-side-loading/">Threat Hunting DLL Side-Loading from Social Lures</a></li>
+    
+    <li><a href="/posts/prioritizing-vulnerabilities-with-context/">Prioritizing Vulnerabilities with CVSS, EPSS, SSVC, and CKEV</a></li>
+    
+    <li><a href="/posts/sentinel-defender-alert-workflows/">Making Sentinel and Defender Alerts Easier to Triage</a></li>
     
   </ul>
 </div>
@@ -249,7 +337,13 @@
   
   <ul>
     
-    <li><a href="/categories/threat-hunting/">Threat Hunting (1)</a></li>
+    <li><a href="/categories/detection-engineering/">Detection Engineering (2)</a></li>
+    
+    <li><a href="/categories/incident-response/">Incident Response (2)</a></li>
+    
+    <li><a href="/categories/threat-hunting/">Threat Hunting (2)</a></li>
+    
+    <li><a href="/categories/soc-investigation/">Soc Investigation (1)</a></li>
     
   </ul>
   
@@ -260,11 +354,41 @@
   
   <ul>
     
+    <li><a href="/tags/detection/">Detection</a></li>
+    
+    <li><a href="/tags/automation/">Automation</a></li>
+    
+    <li><a href="/tags/ckev/">Ckev</a></li>
+    
+    <li><a href="/tags/cvss/">Cvss</a></li>
+    
+    <li><a href="/tags/defender-xdr/">Defender-Xdr</a></li>
+    
     <li><a href="/tags/dll/">Dll</a></li>
+    
+    <li><a href="/tags/elastic/">Elastic</a></li>
+    
+    <li><a href="/tags/epss/">Epss</a></li>
+    
+    <li><a href="/tags/homelab/">Homelab</a></li>
+    
+    <li><a href="/tags/linkedin/">Linkedin</a></li>
+    
+    <li><a href="/tags/logic-apps/">Logic-Apps</a></li>
+    
+    <li><a href="/tags/sentinel/">Sentinel</a></li>
     
     <li><a href="/tags/side-loading/">Side-Loading</a></li>
     
-    <li><a href="/tags/threat-hunting/">Threat-Hunting</a></li>
+    <li><a href="/tags/siem/">Siem</a></li>
+    
+    <li><a href="/tags/soc/">Soc</a></li>
+    
+    <li><a href="/tags/ssvc/">Ssvc</a></li>
+    
+    <li><a href="/tags/vulnerability-management/">Vulnerability-Management</a></li>
+    
+    <li><a href="/tags/windows/">Windows</a></li>
     
   </ul>
   
@@ -280,6 +404,21 @@
 
   
     
+
+<nav class="post-nav">
+  
+  <a href="/posts/prioritizing-vulnerabilities-with-context/" class="nav-prev">
+    <span class="nav-label">&larr; Previous Post</span>
+    <span class="nav-title">Prioritizing Vulnerabilities with CVSS, EPSS, SSVC, and CKEV</span>
+  </a>
+  
+  
+  <a href="/posts/elastic-stack-setup/" class="nav-next">
+    <span class="nav-label">Next Post &rarr;</span>
+    <span class="nav-title">Building a Threat Hunting Lab with Elastic Stack</span>
+  </a>
+  
+</nav>
 
   
 

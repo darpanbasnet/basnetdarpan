@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Threat Hunting on Darpan Basnet</title>
-    <link>http://localhost:1313/categories/threat-hunting/</link>
-    <description>Recent content in Threat Hunting on Darpan Basnet</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <atom:link href="http://localhost:1313/categories/threat-hunting/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
+	<channel>
+		<title>Threat Hunting on Darpan Basnet</title>
+		<link>http://localhost:1313/categories/threat-hunting/</link>
+		<description>Recent content in Threat Hunting on Darpan Basnet</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 29 May 2026 09:00:00 -0600</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/categories/threat-hunting/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Building a Threat Hunting Lab with Elastic Stack</title>
+				<link>http://localhost:1313/posts/elastic-stack-setup/</link>
+				<pubDate>Fri, 29 May 2026 09:00:00 -0600</pubDate>
+				<guid>http://localhost:1313/posts/elastic-stack-setup/</guid>
+				<description>&lt;p&gt;A detection lab should answer one question quickly: can I observe the behavior I care about, and can I turn that observation into a useful analytic? The lab does not need to be large, but it does need to be repeatable. I like Elastic for this kind of work because it gives me ingestion, search, dashboards, and detection rules in one place without hiding the raw event details.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Threat Hunting DLL Side-Loading from Social Lures</title>
+				<link>http://localhost:1313/posts/threat-hunting-dll-side-loading/</link>
+				<pubDate>Wed, 27 May 2026 10:30:00 -0600</pubDate>
+				<guid>http://localhost:1313/posts/threat-hunting-dll-side-loading/</guid>
+				<description>&lt;p&gt;DLL side-loading is effective because it abuses trust. A signed or legitimate executable runs, Windows searches for a dependency, and the attacker places a malicious DLL where the executable will load it. To an analyst, the first process may look normal. The behavior around it is where the hunt gets interesting.&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

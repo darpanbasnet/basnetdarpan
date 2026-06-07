@@ -1,0 +1,23 @@
+{{ define "main" }}
+<header class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ if .Description }}
+    <p class="page-description">{{ .Description }}</p>
+    {{ end }}
+</header>
+
+<div class="timeline">
+    {{ range .Pages.ByDate.Reverse }}
+    <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <h3 class="timeline-title">{{ .Title }}</h3>
+            <div class="timeline-meta">{{ .Params.description }}</div>
+            <div class="timeline-body post-content">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}
