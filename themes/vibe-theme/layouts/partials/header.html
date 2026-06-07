@@ -3,20 +3,25 @@
         {{ $site := .Site }}
         {{ $current := . }}
         {{ $brandText := "Darpan Basnet" }}
+        {{ $brandHref := "/" | relLangURL }}
         {{ if .IsHome }}
             {{ $brandText = "Darpan Basnet" }}
         {{ else if eq .Section "posts" }}
             {{ $brandText = "Blogs" }}
+            {{ $brandHref = "/posts/" | relLangURL }}
         {{ else if eq .Section "projects" }}
             {{ $brandText = "Projects" }}
+            {{ $brandHref = "/projects/" | relLangURL }}
         {{ else if eq .Section "experiences" }}
             {{ $brandText = "Experiences" }}
+            {{ $brandHref = "/experiences/" | relLangURL }}
         {{ else if .IsSection }}
             {{ $brandText = .Title }}
+            {{ $brandHref = .RelPermalink }}
         {{ else if .Title }}
             {{ $brandText = .Title }}
         {{ end }}
-        <a href="{{ "/" | relLangURL }}" class="site-brand{{ if not .IsHome }} site-brand--offset{{ end }}" aria-label="{{ $brandText }}">
+        <a href="{{ $brandHref }}" class="site-brand{{ if not .IsHome }} site-brand--offset{{ end }}" aria-label="{{ $brandText }}">
             {{ $brandText }}
         </a>
         <div class="header-actions">
