@@ -2,9 +2,6 @@
     <div class="header-inner">
         {{ $site := .Site }}
         {{ $current := . }}
-        <div class="site-branding">
-            <a href="{{ $site.BaseURL }}" class="site-title">{{ $site.Title }}</a>
-        </div>
         {{ with $site.Menus.main }}
         <button
             id="nav-toggle"
