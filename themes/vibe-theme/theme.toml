@@ -1,12 +1,11 @@
 name = "vibe-theme"
 license = "MIT"
-licenselink = "https://github.com/yourusername/vibe-theme/blob/master/LICENSE"
 description = "A bespoke, reading-focused Modern Dark Mode Hugo theme."
-homepage = "http://basnetdarpan.com/"
+homepage = "https://basnetdarpan.com/"
 tags = ["blog", "portfolio", "dark-mode", "minimal"]
 features = ["blog", "dark-mode"]
 min_version = "0.112.0"
 
 [author]
   name = "Darpan Basnet"
-  homepage = "http://basnetdarpan.com/"
+  homepage = "https://basnetdarpan.com/"

@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-description: "Welcome to my project showcase — each post highlights something I’ve built or researched recently."
+description: "A place for future projects that are ready to share."
 
 build:
   list: always

@@ -1,4 +1,4 @@
 ---
-title: "All Posts"
-description: "An archive of all articles and essays."
+title: "Writing & Notes"
+description: "A place for future notes, essays, and field writeups."
 ---

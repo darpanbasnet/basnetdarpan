@@ -22,14 +22,19 @@ summaryLength = 30
     weight = 30
 
   [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    name = "Writing"
+    url = "/posts/"
     weight = 40
 
   [[menu.main]]
-    name = "Blogs"
-    url = "/posts/"
+    name = "Research"
+    url = "/research/"
     weight = 50
+
+  [[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 60
 
 [markup]
   [markup.goldmark.renderer]

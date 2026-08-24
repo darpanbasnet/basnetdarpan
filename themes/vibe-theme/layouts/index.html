@@ -8,29 +8,55 @@
 </div>
 
 <div class="home-sections">
+    {{ $recentPosts := first 5 ((where .Site.RegularPages "Section" "posts").ByDate.Reverse) }}
     <section class="recent-posts">
         <h2>Recent Writing & Notes</h2>
+        {{ if $recentPosts }}
         <ul class="post-list">
-            {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+            {{ range $recentPosts }}
             <li class="post-item">
                 <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
                 <a href="{{ .Permalink }}" class="post-link">{{ .Title }}</a>
             </li>
             {{ end }}
         </ul>
+        {{ end }}
         <a href="/posts/" class="view-all">View all writing &rarr;</a>
     </section>
 
+    {{ $recentResearch := first 3 ((where .Site.RegularPages "Section" "research").ByDate.Reverse) }}
+    <section class="recent-research">
+        <h2>Research & Publications</h2>
+        {{ if $recentResearch }}
+        <div class="research-list">
+            {{ range $recentResearch }}
+            <article class="research-item">
+                <div class="research-meta">
+                    {{ with .Params.status }}<span>{{ . }}</span>{{ end }}
+                    <time>{{ .Date.Format "2006" }}</time>
+                </div>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <p>{{ .Description | truncate 130 }}</p>
+            </article>
+            {{ end }}
+        </div>
+        {{ end }}
+        <a href="/research/" class="view-all">View research &rarr;</a>
+    </section>
+
+    {{ $latestProjects := first 4 ((where .Site.RegularPages "Section" "projects").ByDate.Reverse) }}
     <section class="recent-projects">
         <h2>Latest Projects</h2>
+        {{ if $latestProjects }}
         <div class="project-grid">
-            {{ range first 4 (where .Site.RegularPages "Section" "projects") }}
+            {{ range $latestProjects }}
             <div class="project-card">
                 <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
                 <p>{{ .Description | truncate 100 }}</p>
             </div>
             {{ end }}
         </div>
+        {{ end }}
         <a href="/projects/" class="view-all">View all projects &rarr;</a>
     </section>
 </div>

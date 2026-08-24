@@ -439,6 +439,21 @@ p { margin-bottom: 1.5rem; }
     margin-bottom: 4rem;
 }
 
+.page-header {
+    margin-bottom: 2.5rem;
+}
+
+.page-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+
+.page-description {
+    color: var(--text-muted);
+    max-width: 62ch;
+    margin-bottom: 0;
+}
+
 .post-list {
     list-style: none;
     margin-bottom: 1rem;
@@ -537,6 +552,68 @@ p { margin-bottom: 1.5rem; }
     color: var(--text-muted);
     margin-bottom: 0;
     font-size: 0.95rem;
+}
+
+/* Research list */
+.research-list {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.research-item {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.15rem;
+}
+
+.research-item h3 {
+    margin-top: 0.35rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.22rem;
+}
+
+.research-item h3 a {
+    color: var(--text-main);
+}
+
+.research-item h3 a:hover {
+    color: var(--accent-color);
+}
+
+.research-item p {
+    color: var(--text-muted);
+    margin-bottom: 0;
+    font-size: 0.95rem;
+}
+
+.research-meta,
+.item-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.research-meta {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+}
+
+.research-meta span,
+.research-meta time,
+.item-meta span,
+.item-meta time {
+    display: inline-flex;
+    align-items: center;
+}
+
+.research-meta span:not(:last-child)::after,
+.research-meta time:not(:last-child)::after,
+.item-meta span:not(:last-child)::after,
+.item-meta time:not(:last-child)::after {
+    content: "/";
+    color: var(--border-color);
+    margin-left: 0.45rem;
 }
 
 /* Single Post */

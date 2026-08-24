@@ -1,17 +1,20 @@
 {{ define "main" }}
 <header class="page-header">
+    <h1 class="page-title">{{ .Title }}</h1>
     {{ if .Description }}
     <p class="page-description">{{ .Description }}</p>
     {{ end }}
 </header>
 
 <div class="content-list">
-    {{ range .Pages }}
+    {{ range .Pages.ByDate.Reverse }}
     <article class="list-item">
         <h2 class="item-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        {{ if .Date }}
+        {{ if or .Date .Params.status .Params.venue }}
         <div class="item-meta">
-            <time>{{ .Date.Format "January 2, 2006" }}</time>
+            {{ if .Date }}<time>{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
+            {{ with .Params.status }}<span>{{ . }}</span>{{ end }}
+            {{ with .Params.venue }}<span>{{ . }}</span>{{ end }}
         </div>
         {{ end }}
         <div class="item-summary">

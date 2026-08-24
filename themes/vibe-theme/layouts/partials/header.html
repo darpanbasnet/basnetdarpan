@@ -7,11 +7,14 @@
         {{ if .IsHome }}
             {{ $brandText = "Darpan Basnet" }}
         {{ else if eq .Section "posts" }}
-            {{ $brandText = "Blogs" }}
+            {{ $brandText = "Writing" }}
             {{ $brandHref = "/posts/" | relLangURL }}
         {{ else if eq .Section "projects" }}
             {{ $brandText = "Projects" }}
             {{ $brandHref = "/projects/" | relLangURL }}
+        {{ else if eq .Section "research" }}
+            {{ $brandText = "Research" }}
+            {{ $brandHref = "/research/" | relLangURL }}
         {{ else if eq .Section "experiences" }}
             {{ $brandText = "Experiences" }}
             {{ $brandHref = "/experiences/" | relLangURL }}
