@@ -33,4 +33,4 @@ summaryLength = 30
 
 [markup]
   [markup.goldmark.renderer]
-    unsafe = true
+    unsafe = false

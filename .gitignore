@@ -1,2 +1,7 @@
 # Ignore temporary resume upload
 temp/
+
+# Hugo local/generated output
+.hugo_build.lock
+public/
+resources/_gen/

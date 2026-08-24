@@ -1,6 +1,0 @@
-[submodule "themes/lotusdocs"]
-	path = themes/lotusdocs
-	url = https://github.com/colinwilson/lotusdocs
-[submodule "themes/explore"]
-	path = themes/explore
-	url = https://github.com/yogirk/explore.git
